@@ -1,6 +1,5 @@
 package com.sxd.swapping.base;
 
-import com.sxd.swapping.domain.HuaYangArea;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
@@ -8,6 +7,9 @@ import javax.persistence.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * 基础bean
+ */
 @MappedSuperclass
 public class BaseBean {
 

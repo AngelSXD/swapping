@@ -1,5 +1,6 @@
 package com.sxd.swapping.controller;
 
+import com.sxd.swapping.base.BatchBean;
 import com.sxd.swapping.base.PageResponse;
 import com.sxd.swapping.base.UniVerResponse;
 import com.sxd.swapping.domain.HuaYangArea;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,6 +75,33 @@ public class HuaYangApi {
             throw new MyException("更新失败",UniVerResponse.ERROR_BUSINESS);
         }
 
+        return response;
+    }
+
+    /**
+     * 自定义的bean 需要使用@RequestBody标注 否则 仅会提示 第一个字段不能为null
+     * @param batchBean
+     * @return
+     */
+    @PostMapping("/updates")
+    public UniVerResponse<List<HuaYangArea>> updates(@RequestBody BatchBean batchBean){
+        UniVerResponse.checkField(batchBean,"likeName","areaPersons");
+        UniVerResponse<List<HuaYangArea>> response = new UniVerResponse<>();
+        List<Long> areaPersons = batchBean.getAreaPersons();
+
+        List<HuaYangArea> list = new ArrayList<>();
+        areaPersons.forEach(i->{
+            HuaYangArea huaYangArea = new HuaYangArea();
+            huaYangArea.initEntity();
+            huaYangArea.setAreaName(batchBean.getLikeName());
+            huaYangArea.setAreaPerson(i);
+            list.add(huaYangArea);
+        });
+        try {
+            response.beTrue(huaYangService.updates(batchBean.getLikeName(),list));
+        }catch (Exception e){
+            throw new MyException("删除再插入失败",UniVerResponse.ERROR_BUSINESS);
+        }
         return response;
     }
 

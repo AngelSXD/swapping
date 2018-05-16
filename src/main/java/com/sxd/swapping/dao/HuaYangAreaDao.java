@@ -49,6 +49,10 @@ public interface HuaYangAreaDao  extends JpaRepository<HuaYangArea,Long> ,JpaSpe
             "hy.areaPerson = :areaPerson where hy.uid =:uId")
     int update(@Param("areaPerson")Long areaPerson,@Param("uId") String uId);
 
+    @Modifying
+    @Transactional
+    @Query("delete from HuaYangArea hy where hy.areaName like "+"%"+":areaName"+"%")
+    void deleteByAreaName(@Param("areaName") String areaName);
 
 
 }

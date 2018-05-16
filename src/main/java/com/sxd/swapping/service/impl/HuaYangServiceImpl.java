@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,13 @@ public class HuaYangServiceImpl implements HuaYangService {
     @Override
     public HuaYangArea findByAreaNameLike(String areaName) {
         return huaYangAreaDao.findAllByAreaNameLike(areaName);
+    }
+
+    @Override
+    @Transactional
+    public List<HuaYangArea> updates(String areaName,List<HuaYangArea> areas) {
+        huaYangAreaDao.deleteByAreaName(areaName);
+        return huaYangAreaDao.saveAll(areas);
     }
 
     @Override
