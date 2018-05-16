@@ -1,4 +1,4 @@
-package com.sxd.swapping.dao;
+package com.sxd.swapping.dao.jpa;
 
 import com.sxd.swapping.domain.HuaYangArea;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,7 +13,7 @@ public interface HuaYangAreaDao  extends JpaRepository<HuaYangArea,Long> ,JpaSpe
     /**
      * 简单JPA操作 映射方法名 查询操作  根据areaName模糊查询
      * 查询操作 不需要@Modifying注解支持
-     * @param areaName
+     * @param areaName  字段-区域名称
      * @return
      */
     HuaYangArea findAllByAreaNameLike(String areaName);
@@ -24,8 +24,8 @@ public interface HuaYangAreaDao  extends JpaRepository<HuaYangArea,Long> ,JpaSpe
      *
      * 更新操作中 如果某个字段为null则不更新，否则更新【注意符号和空格位置】
      *
-     * @param huaYangArea
-     * @return
+     * @param huaYangArea   传入实体，分别取实体字段进行set
+     * @return  更新操作返回sql作用条数
      */
     @Modifying
     @Transactional
@@ -39,9 +39,9 @@ public interface HuaYangAreaDao  extends JpaRepository<HuaYangArea,Long> ,JpaSpe
 
     /**
      * 复杂JPA操作  使用@Query()自定义sql语句 更新部分字段
-     * @param areaPerson
-     * @param uId
-     * @return
+     * @param areaPerson    字段--区域人数
+     * @param uId           字段--业务ID
+     * @return              更新操作返回sql作用条数
      */
     @Modifying
     @Transactional
