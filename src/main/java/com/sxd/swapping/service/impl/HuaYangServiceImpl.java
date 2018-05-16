@@ -1,6 +1,7 @@
 package com.sxd.swapping.service.impl;
 
-import com.sxd.swapping.dao.HuaYangAreaDao;
+import com.sxd.swapping.dao.jpa.HuaYangAreaDao;
+import com.sxd.swapping.dao.mybatis.HuaYangAreaMapper;
 import com.sxd.swapping.domain.HuaYangArea;
 import com.sxd.swapping.service.HuaYangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class HuaYangServiceImpl implements HuaYangService {
     @Autowired
     HuaYangAreaDao huaYangAreaDao;
 
+    @Autowired
+    HuaYangAreaMapper huaYangAreaMapper;
+
     @Override
     public HuaYangArea findByAreaNameLike(String areaName) {
         return huaYangAreaDao.findAllByAreaNameLike(areaName);
@@ -28,6 +32,11 @@ public class HuaYangServiceImpl implements HuaYangService {
     public List<HuaYangArea> updates(String areaName,List<HuaYangArea> areas) {
         huaYangAreaDao.deleteByAreaName(areaName);
         return huaYangAreaDao.saveAll(areas);
+    }
+
+    @Override
+    public HuaYangArea getByUid(String uid) {
+        return huaYangAreaMapper.findOne(uid);
     }
 
     @Override
