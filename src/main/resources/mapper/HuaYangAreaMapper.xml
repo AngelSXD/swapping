@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxd.swapping.dao.mybatis.HuaYangAreaMapper">
+
+    <select
+            id="findByNameAndPersonAndCreateDate"
+            parameterType="com.sxd.swapping.domain.HuaYangArea"
+            resultType="com.sxd.swapping.base.HuaYangModelBean">
+
+
+        select
+            hy.uid uid,
+            hy.create_date createDate,
+            hy.update_date updateDate,
+            hy.area_name areaName,
+            hy.area_person areaPerson
+        from
+            hua_yang_area AS hy
+
+        <where>
+            1=1
+            <if test="areaName != null">
+                AND hy.area_name LIKE '%' #{areaName} '%'
+            </if>
+
+            <if test="areaPerson != null">
+                AND hy.area_person >= #{areaPerson}
+            </if>
+
+            <if test="createDate != null">
+                AND <![CDATA[hy.create_date >= #{createDate}]]>
+            </if>
+
+        </where>
+
+    </select>
+
+
+
+
+
+
+</mapper>

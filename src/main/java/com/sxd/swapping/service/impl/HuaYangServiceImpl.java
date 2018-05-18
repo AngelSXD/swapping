@@ -1,5 +1,8 @@
 package com.sxd.swapping.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.sxd.swapping.base.HuaYangModelBean;
 import com.sxd.swapping.dao.jpa.HuaYangAreaDao;
 import com.sxd.swapping.dao.mybatis.HuaYangAreaMapper;
 import com.sxd.swapping.domain.HuaYangArea;
@@ -34,10 +37,6 @@ public class HuaYangServiceImpl implements HuaYangService {
         return huaYangAreaDao.saveAll(areas);
     }
 
-    @Override
-    public HuaYangArea getByUid(String uid) {
-        return huaYangAreaMapper.findOne(uid);
-    }
 
     @Override
     public HuaYangArea insert(HuaYangArea entity) throws Exception {
@@ -78,4 +77,55 @@ public class HuaYangServiceImpl implements HuaYangService {
     public List<HuaYangArea> findAll() throws Exception {
         return huaYangAreaDao.findAll();
     }
+
+    @Override
+    public HuaYangArea getByUidWithMyBatis(String uid) {
+        return huaYangAreaMapper.findOne(uid);
+    }
+
+    @Override
+    public HuaYangArea insertWithMybatis(HuaYangArea huaYangArea) {
+        huaYangAreaMapper.insert(huaYangArea);
+        return huaYangAreaMapper.findOne(huaYangArea.getUid());
+    }
+
+    @Override
+    public HuaYangArea updateWithMyBatis(HuaYangArea huaYangArea) {
+        huaYangAreaMapper.update(huaYangArea);
+        return huaYangAreaMapper.selectById(huaYangArea.getId());
+    }
+
+    @Override
+    public void deleteWithMyBatis(Long id) {
+        huaYangAreaMapper.delete(id);
+    }
+
+    @Override
+    public HuaYangArea seleteWithMyBatis(Long id) {
+        return huaYangAreaMapper.selectById(id);
+    }
+
+    @Override
+    public List<HuaYangArea> selectLikeNameWithMyBatis(String areaName) {
+        return huaYangAreaMapper.selectByNameLike(areaName);
+    }
+
+    @Override
+    public List<HuaYangArea> selectLikeNameWithMyBatis2(String areaName) {
+        return huaYangAreaMapper.selectByNameLike2(areaName);
+    }
+
+    @Override
+    public List<HuaYangModelBean> findByNameAndPersonAndCreateDateWithMyBatisFile(HuaYangArea huaYangArea) {
+        return huaYangAreaMapper.findByNameAndPersonAndCreateDate(huaYangArea);
+    }
+
+    @Override
+    public PageInfo<HuaYangModelBean> findByNameAndPersonAndCreateDateWithMyBatisFileAndpagehelper(HuaYangArea huaYangArea) {
+        PageHelper.startPage(huaYangArea.getPageNum(),huaYangArea.getPageSize());
+        List<HuaYangModelBean> list = huaYangAreaMapper.findByNameAndPersonAndCreateDate(huaYangArea);
+        PageInfo<HuaYangModelBean> pageInfo = new PageInfo<>(list);
+        return pageInfo;
+    }
+
 }
