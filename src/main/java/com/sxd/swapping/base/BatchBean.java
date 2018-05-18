@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * 批量bean
+ *
+ * 用于前台传递API接收请求数据
  */
 @Getter
 @Setter

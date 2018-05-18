@@ -2,6 +2,7 @@ package com.sxd.swapping.base;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.*;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 /**
  * 基础bean
+ * 所有实体 都有这些基础字段
  */
 @MappedSuperclass
 public class BaseBean {
@@ -17,10 +19,11 @@ public class BaseBean {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;// 主键 自增
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(nullable = false, updatable = false)
-    private Date createDate = new Date();// 创建时间
+    private Date createDate;// 创建时间
 
-    private Date updateDate = new Date();// 修改时间
+    private Date updateDate;// 修改时间
 
     private String updateId; // 修改人
 

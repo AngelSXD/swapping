@@ -21,4 +21,10 @@ public class MyException extends  RuntimeException {
         this.code = code;
     }
 
+    public MyException(String msg,int code,Exception e){
+        super(msg);
+        this.code = code;
+        e.printStackTrace();
+    }
+
 }

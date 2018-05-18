@@ -25,6 +25,10 @@ public class PageResponse<T> {
 
     private int code;
 
+    private int pageNum;
+
+    private int pageSize;
+
     private long total;
 
     private List<T> rows = new ArrayList<T>();
@@ -33,6 +37,16 @@ public class PageResponse<T> {
         this.success = true;
         this.msg = "successful";
         this.code = UniVerResponse.SUCCESS_REQUEST;
+        this.total = total;
+        this.rows = rows;
+    }
+
+    public  void beTrue(int pageNum,int pageSize,long total,List<T> rows){
+        this.success = true;
+        this.msg = "successful";
+        this.code = UniVerResponse.SUCCESS_REQUEST;
+        this.pageNum = pageNum;
+        this.pageSize = pageSize;
         this.total = total;
         this.rows = rows;
     }
