@@ -13,4 +13,6 @@
 
 6.[【spring boot】14.spring boot集成mybatis,注解方式OR映射文件方式AND pagehelper分页插件【Mybatis】](http://www.cnblogs.com/sxdcgaq8080/p/9039442.html)
 
-7.
+7.[【spring mvc】后台API查询接口，get请求，后台Date字段接收前台String类型的时间，报错default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'createDate';](http://www.cnblogs.com/sxdcgaq8080/p/9055107.html)
+
+8.
