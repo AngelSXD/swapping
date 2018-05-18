@@ -18,7 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/huayang")
-public class HuaYangApi {
+public class HuaYangApiWithJPA {
 
 
     @Autowired
@@ -42,17 +42,6 @@ public class HuaYangApi {
         return response;
     }
 
-
-    @GetMapping(value = "/oneHuaYang")
-    public UniVerResponse<HuaYangArea> findOne(String uid){
-        UniVerResponse.simplCheckField(uid,"uid");
-
-        UniVerResponse<HuaYangArea> response = new UniVerResponse<>();
-        HuaYangArea huaYangArea = huaYangService.getByUid(uid);
-        response.beTrue(huaYangArea);
-
-        return response;
-    }
 
     /**
      * 模糊查询符合条件的数据
