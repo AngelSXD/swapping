@@ -15,7 +15,7 @@
 
 7.[【spring mvc】后台API查询接口，get请求，后台Date字段接收前台String类型的时间，报错default message Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'createDate';](http://www.cnblogs.com/sxdcgaq8080/p/9055107.html)
 
-8.[【spring boot】15.spring boot项目 采用Druid数据库连接池](https://www.cnblogs.com/sxdcgaq8080/p/9057161.html)
+8.[【spring boot】15.spring boot项目 采用Druid数据库连接池,并启用druid监控功能](https://www.cnblogs.com/sxdcgaq8080/p/9057161.html)
 
 9.[【log4j】springboot项目启动 ,使用的druid数据源，log4j报错 log4j:WARN Please initialize the log4j system properly.](http://www.cnblogs.com/sxdcgaq8080/p/9065796.html)
 
