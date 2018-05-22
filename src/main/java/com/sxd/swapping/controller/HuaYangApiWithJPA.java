@@ -6,6 +6,7 @@ import com.sxd.swapping.base.UniVerResponse;
 import com.sxd.swapping.domain.HuaYangArea;
 import com.sxd.swapping.service.HuaYangService;
 import com.sxd.swapping.util.MyException;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -16,6 +17,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 展示swagger注解使用在新建分支上
+ */
+@Api(value = "HuaYangAPiWithJPA",description = "对华阳对象相关操作",tags = {"华阳JPA"})
 @RestController
 @RequestMapping(value = "/huayang")
 public class HuaYangApiWithJPA {
@@ -28,8 +33,14 @@ public class HuaYangApiWithJPA {
      * @param huaYangArea
      * @return
      */
+    @ApiOperation(value = "保存HUAYANG信息",notes = "传入HUAYANG实体，保存HUAYANG信息")
     @PostMapping()
-    public UniVerResponse<HuaYangArea> huayang(@RequestBody HuaYangArea huaYangArea){
+    @ApiResponses({
+            @ApiResponse(code = 200,message = "success"),
+            @ApiResponse(code = 10001,message = "参数错误"),
+            @ApiResponse(code = 20001,message = "业务错误"),
+            @ApiResponse(code = 50001,message = "系统异常")})
+    public UniVerResponse<HuaYangArea> huayang(@ApiParam(value = "create a entity  HuaYangArea") @RequestBody HuaYangArea huaYangArea){
         UniVerResponse.checkField(huaYangArea,"areaName","areaPerson");
 
         UniVerResponse<HuaYangArea> response = new UniVerResponse<>();
