@@ -19,4 +19,6 @@
 
 9.[【log4j】springboot项目启动 ,使用的druid数据源，log4j报错 log4j:WARN Please initialize the log4j system properly.](http://www.cnblogs.com/sxdcgaq8080/p/9065796.html)
 
-10.
+10.[【spring boot】spring boot中使用定时任务配置](https://www.cnblogs.com/sxdcgaq8080/p/9289991.html)
+
+11.
