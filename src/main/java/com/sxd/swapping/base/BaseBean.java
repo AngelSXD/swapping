@@ -125,6 +125,18 @@ public class BaseBean {
     }
 
     /**
+     * 默认按照  创建日期降序排序
+     *
+     * 因为 spring boot 2.0版本
+     * new PageRequest（）做法已经不推荐使用了
+     * @return
+     */
+    public  PageRequest page2(){
+        Sort sort = new Sort(Sort.Direction.DESC, "createDate");
+        return new PageRequest(this.pageNum,this.pageSize,sort);
+    }
+
+    /**
      * 分页 排序工具方法
      *
      * 中文字段排序 需要在查询出来后处理 sort无法解决中文排序的问题

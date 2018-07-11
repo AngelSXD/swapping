@@ -2,20 +2,28 @@ package com.sxd.swapping.test;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class MyTest {
 
+
     @Test
     public  void test1(){
+        FileTest fileTest = new FileTest();
+        String  aa = fileTest.readToString("D:/新建文本文档.txt");
+        List<String> aaList = new ArrayList<>();
+        String regex = "@RequestMapping* \\)";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(aa);
+        while (matcher.find()){
+            System.out.println(matcher.group());
+        }
 
-        User user = new User();
-        user.setPassword("adsas");
-        user.setUserName("德玛西亚");
-
-        sys(user);
 
 
     }

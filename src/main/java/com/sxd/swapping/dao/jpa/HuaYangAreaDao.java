@@ -54,5 +54,4 @@ public interface HuaYangAreaDao  extends JpaRepository<HuaYangArea,Long> ,JpaSpe
     @Query("delete from HuaYangArea hy where hy.areaName like "+"%"+":areaName"+"%")
     void deleteByAreaName(@Param("areaName") String areaName);
 
-
 }

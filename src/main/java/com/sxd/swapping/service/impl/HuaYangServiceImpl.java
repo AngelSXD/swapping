@@ -58,7 +58,11 @@ public class HuaYangServiceImpl implements HuaYangService {
 
     @Override
     public Page<HuaYangArea> pageFind(HuaYangArea entity) throws Exception {
+
+//        注意查看page2()不被推荐使用的原因
+//        return  huaYangAreaDao.findAll(HuaYangArea.where(entity),entity.page2());
         return huaYangAreaDao.findAll(HuaYangArea.where(entity),entity.page());
+
     }
 
     @Override
@@ -128,4 +132,8 @@ public class HuaYangServiceImpl implements HuaYangService {
         return pageInfo;
     }
 
+    @Override
+    public int scheduleUpdate() {
+        return huaYangAreaMapper.scheduleUpdate();
+    }
 }

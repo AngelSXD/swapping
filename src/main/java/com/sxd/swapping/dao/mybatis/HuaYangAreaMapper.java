@@ -101,6 +101,24 @@ public interface HuaYangAreaMapper {
     @Delete("DELETE FROM hua_yang_area WHERE id=#{id}")
     void delete(Long id);
 
+    /**
+     * 单字段更新
+     *
+     * 根据uid  以及提供的 字段名+字段值  更新单个字段的值
+     * @param filed
+     * @param content
+     * @param uid
+     * @return
+     */
+    @Update("update hua_yang_area set ${filed} = #{context}  where uid = #{uid} ")
+    int updateOneFiled(String filed,String content,String uid);
 
+    /**
+     * 定时任务调用
+     * 给人口数小于10000人的 数据 +1
+     * @return
+     */
+    @Update("update hua_yang_area set area_person = area_person+1 where area_person <10000")
+    int scheduleUpdate();
 
 }

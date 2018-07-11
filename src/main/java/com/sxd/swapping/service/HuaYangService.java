@@ -30,4 +30,6 @@ public interface HuaYangService extends ICRUDService<HuaYangArea>{
     List<HuaYangModelBean> findByNameAndPersonAndCreateDateWithMyBatisFile(HuaYangArea huaYangArea);
 
     PageInfo<HuaYangModelBean> findByNameAndPersonAndCreateDateWithMyBatisFileAndpagehelper(HuaYangArea huaYangArea);
+
+    int scheduleUpdate();
 }
