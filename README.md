@@ -21,4 +21,6 @@
 
 10.[【spring boot】spring boot中使用定时任务配置](https://www.cnblogs.com/sxdcgaq8080/p/9289991.html)
 
-11.暂留待续
+11.[【mysql】mysql增加version字段实现乐观锁，实现高并发下的订单库存的并发控制，通过开启多线程同时处理模拟多个请求同时到达的情况](https://www.cnblogs.com/sxdcgaq8080/p/9454161.html)
+
+12.留作待续
