@@ -36,6 +36,20 @@
     </select>
 
 
+    <select id="findMap" parameterType="com.sxd.swapping.domain.HuaYangArea" resultType="java.util.HashMap">
+         select
+            hy.uid,
+            hy.area_name
+        from
+            hua_yang_area AS hy
+        <where>
+            <if test="areaPerson != null">
+                AND hy.area_person &gt;= #{areaPerson}
+            </if>
+        </where>
+    </select>
+
+
 
 
 

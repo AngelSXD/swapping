@@ -5,6 +5,7 @@ import com.sxd.swapping.base.HuaYangModelBean;
 import com.sxd.swapping.domain.HuaYangArea;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface HuaYangService extends ICRUDService<HuaYangArea>{
@@ -32,4 +33,6 @@ public interface HuaYangService extends ICRUDService<HuaYangArea>{
     PageInfo<HuaYangModelBean> findByNameAndPersonAndCreateDateWithMyBatisFileAndpagehelper(HuaYangArea huaYangArea);
 
     int scheduleUpdate();
+
+    Map<String,String> findMap(HuaYangArea entity);
 }

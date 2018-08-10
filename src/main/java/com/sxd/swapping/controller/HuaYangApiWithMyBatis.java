@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/huayangMybatis")
@@ -161,6 +162,14 @@ public class HuaYangApiWithMyBatis {
         }
 
         return response;
+    }
+
+    @GetMapping(value = "/findMap")
+    public UniVerResponse<Map<String,String>> findMap(HuaYangArea entity){
+        UniVerResponse<Map<String,String>> res = new UniVerResponse<>();
+        res.beTrue(huaYangService.findMap(entity));
+
+        return res;
     }
 
 }

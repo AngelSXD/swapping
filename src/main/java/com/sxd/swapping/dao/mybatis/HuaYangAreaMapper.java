@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 public interface HuaYangAreaMapper {
@@ -120,5 +121,12 @@ public interface HuaYangAreaMapper {
      */
     @Update("update hua_yang_area set area_person = area_person+1 where area_person <10000")
     int scheduleUpdate();
+
+    /**
+     * mybatis  查询接收map集合
+     * @param area
+     * @return
+     */
+    List<Map<String,String>> findMap(HuaYangArea area);
 
 }

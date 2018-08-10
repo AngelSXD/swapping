@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -136,4 +137,28 @@ public class HuaYangServiceImpl implements HuaYangService {
     public int scheduleUpdate() {
         return huaYangAreaMapper.scheduleUpdate();
     }
+
+    @Override
+    public Map<String, String> findMap(HuaYangArea entity) {
+        List<Map<String,String>> list = huaYangAreaMapper.findMap(entity);
+        Map<String,String> res = new HashMap<>();
+        for (Map<String, String> stringStringMap : list) {
+            System.out.println(stringStringMap.toString());
+
+            String uid = null;
+            String areaName = null;
+
+            for (Map.Entry<String,String> entry:stringStringMap.entrySet()){
+                if ("uid".equals(entry.getKey())){
+                    uid = entry.getValue();
+                }else {
+                    areaName = entry.getValue();
+                }
+            }
+
+            res.put(uid,areaName);
+        }
+        return res;
+    }
+
 }

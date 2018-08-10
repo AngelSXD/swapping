@@ -1,978 +1,977 @@
+DEBUG Thread-58 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50078} open
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50079} open
+DEBUG Thread-58 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50078} Header: [uid, version, sale_num, stock]
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50079} Header: [uid, version, sale_num, stock]
+DEBUG Thread-58 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50078} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 5, 55, 45]
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50079} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 6, 66, 34]
+DEBUG Thread-58 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50078} closed
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50079} closed
+DEBUG Thread-58 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20010} clearParameters. 
+DEBUG Thread-58 druid.sql.Connection - {conn-10002} commited
+DEBUG Thread-58 druid.sql.Connection - {conn-10002} setAutoCommit true
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20019} executed. 22.52047 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20019} clearParameters. 
+DEBUG Thread-58 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20015} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 6]
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20015} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20008} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20008} Types : [VARCHAR]
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20008} executed. 0.342822 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-60 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50080} open
+DEBUG Thread-60 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50080} Header: [uid, version, sale_num, stock]
+DEBUG Thread-60 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50080} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-60 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50080} closed
+DEBUG Thread-60 druid.sql.Statement - {conn-10003, pstmt-20008} clearParameters. 
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20016} executed. 21.785852 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20016} clearParameters. 
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [VARCHAR]
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 0.245473 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-64 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50081} open
+DEBUG Thread-64 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50081} Header: [uid, version, sale_num, stock]
+DEBUG Thread-64 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50081} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 6, 66, 34]
+DEBUG Thread-64 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50081} closed
+DEBUG Thread-64 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
+DEBUG Thread-64 druid.sql.Connection - {conn-10009} commited
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20018} executed. 10.497975 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-64 druid.sql.Connection - {conn-10009} setAutoCommit true
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20018} clearParameters. 
+DEBUG Thread-64 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.342822 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-62 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50082} open
+DEBUG Thread-62 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50082} Header: [uid, version, sale_num, stock]
+DEBUG Thread-62 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50082} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 6, 66, 34]
+DEBUG Thread-62 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50082} closed
+DEBUG Thread-62 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG Thread-62 druid.sql.Connection - {conn-10001} commited
+DEBUG Thread-62 druid.sql.Connection - {conn-10001} setAutoCommit true
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20015} executed. 4.94192 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20015} clearParameters. 
+DEBUG Thread-62 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20010} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20010} Types : [VARCHAR]
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20010} executed. 0.344324 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50083} open
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50083} Header: [uid, version, sale_num, stock]
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50083} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 6, 66, 34]
+DEBUG Thread-63 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50083} closed
+DEBUG Thread-63 druid.sql.Statement - {conn-10010, pstmt-20010} clearParameters. 
+DEBUG Thread-63 druid.sql.Connection - {conn-10010} commited
+DEBUG Thread-63 druid.sql.Connection - {conn-10010} setAutoCommit true
+DEBUG Thread-63 druid.sql.Connection - {conn-10010} pool-recycle
+DEBUG Thread-57 druid.sql.Connection - {conn-10011} commited
+DEBUG Thread-57 druid.sql.Connection - {conn-10011} setAutoCommit true
+DEBUG Thread-57 druid.sql.Connection - {conn-10011} pool-recycle
+DEBUG Thread-60 druid.sql.Connection - {conn-10003} commited
+DEBUG Thread-60 druid.sql.Connection - {conn-10003} setAutoCommit true
+DEBUG Thread-60 druid.sql.Connection - {conn-10003} pool-recycle
+DEBUG http-nio-9666-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 43.223474 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-9666-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-9666-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG http-nio-9666-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-9666-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001, rs-50084} query executed. 1.374292 millis. select goodsstock0_.id as id1_0_, goodsstock0_.create_date as create_d2_0_, goodsstock0_.create_id as create_i3_0_, goodsstock0_.uid as uid4_0_, goodsstock0_.update_date as update_d5_0_, goodsstock0_.update_id as update_i6_0_, goodsstock0_.buy_num as buy_num7_0_, goodsstock0_.goods_name as goods_na8_0_, goodsstock0_.goods_price as goods_pr9_0_, goodsstock0_.sale_num as sale_nu10_0_, goodsstock0_.stock as stock11_0_, goodsstock0_.version as version12_0_ from goods_stock goodsstock0_ where goodsstock0_.uid=?
+DEBUG http-nio-9666-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50084} open
+DEBUG http-nio-9666-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50084} Header: [id, create_date, create_id, uid, update_date, update_id, buy_num, goods_name, goods_price, sale_num, stock, version]
+DEBUG http-nio-9666-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50084} Result: [1, 2018-08-10 14:49:56.0, 07074c6d-27d5-4189-bdd0-6f245c83b767, a6ad9505-e6c5-4e44-b049-113ec77f6033, null, null, null, RR液晶表, 883, 77, 23, 7]
+DEBUG http-nio-9666-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50084} closed
+DEBUG http-nio-9666-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG Thread-69 druid.sql.Connection - {conn-10011} pool-connect
+DEBUG Thread-73 druid.sql.Connection - {conn-10010} pool-connect
+DEBUG Thread-69 druid.sql.Connection - {conn-10011} setAutoCommit false
+DEBUG Thread-74 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG Thread-66 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG Thread-72 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG Thread-66 druid.sql.Connection - {conn-10004} setAutoCommit false
+DEBUG Thread-75 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG Thread-75 druid.sql.Connection - {conn-10007} setAutoCommit false
+DEBUG Thread-68 druid.sql.Connection - {conn-10003} pool-connect
+DEBUG Thread-68 druid.sql.Connection - {conn-10003} setAutoCommit false
+DEBUG Thread-67 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG Thread-67 druid.sql.Connection - {conn-10008} setAutoCommit false
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} Types : [VARCHAR]
+DEBUG Thread-70 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG Thread-70 druid.sql.Connection - {conn-10001} setAutoCommit false
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} executed. 0.973181 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50085} open
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50085} Header: [uid, version, sale_num, stock]
+DEBUG Thread-71 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG Thread-72 druid.sql.Connection - {conn-10002} setAutoCommit false
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} Types : [VARCHAR]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} Types : [VARCHAR]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [VARCHAR]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} executed. 0.564559 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-74 druid.sql.Connection - {conn-10006} setAutoCommit false
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50086} open
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 0.601816 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50087} open
+DEBUG Thread-73 druid.sql.Connection - {conn-10010} setAutoCommit false
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50087} Header: [uid, version, sale_num, stock]
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50087} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50086} Header: [uid, version, sale_num, stock]
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50086} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} executed. 0.43356 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50085} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50088} open
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50086} closed
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50088} Header: [uid, version, sale_num, stock]
+DEBUG Thread-71 druid.sql.Connection - {conn-10009} setAutoCommit false
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} Types : [VARCHAR]
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50087} closed
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50088} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50085} closed
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} clearParameters. 
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} clearParameters. 
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50088} closed
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} clearParameters. 
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [VARCHAR]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} Types : [VARCHAR]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20021} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20021} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20020} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20020} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} executed. 1.723122 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 2.37211 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50089} open
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50089} Header: [uid, version, sale_num, stock]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 0.837675 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50089} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20012} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20012} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} Types : [VARCHAR]
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} Types : [VARCHAR]
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50089} closed
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} clearParameters. 
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} executed. 2.762103 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50092} open
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50092} Header: [uid, version, sale_num, stock]
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50092} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50091} open
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50091} Header: [uid, version, sale_num, stock]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20015} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20015} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20020} executed. 0.288439 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50090} open
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20013} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20020} clearParameters. 
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50090} Header: [uid, version, sale_num, stock]
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} executed. 3.143684 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 4.313664 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50093} open
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20013} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50092} closed
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50091} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} clearParameters. 
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50091} closed
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20017} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20017} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50094} open
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50094} Header: [uid, version, sale_num, stock]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20016} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20016} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50094} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50090} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50094} closed
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50090} closed
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50093} Header: [uid, version, sale_num, stock]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} Types : [VARCHAR]
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50093} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} executed. 1.3145 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50095} open
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50095} Header: [uid, version, sale_num, stock]
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50093} closed
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} clearParameters. 
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20014} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20014} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20018} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20018} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50095} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 8, 88, 12]
+DEBUG Thread-75 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50095} closed
+DEBUG Thread-75 druid.sql.Statement - {conn-10007, pstmt-20005} clearParameters. 
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20019} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 7]
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20019} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20021} executed. 4.970463 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20021} clearParameters. 
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [VARCHAR]
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 0.558249 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50096} open
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50096} Header: [uid, version, sale_num, stock]
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50096} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-67 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50096} closed
+DEBUG Thread-67 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
+DEBUG Thread-67 druid.sql.Connection - {conn-10008} commited
+DEBUG Thread-67 druid.sql.Connection - {conn-10008} setAutoCommit true
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20012} executed. 6.491378 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20012} clearParameters. 
+DEBUG Thread-67 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} Types : [VARCHAR]
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} executed. 0.358145 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50097} open
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50097} Header: [uid, version, sale_num, stock]
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50097} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-66 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50097} closed
+DEBUG Thread-66 druid.sql.Statement - {conn-10004, pstmt-20006} clearParameters. 
+DEBUG Thread-66 druid.sql.Connection - {conn-10004} commited
+DEBUG Thread-66 druid.sql.Connection - {conn-10004} setAutoCommit true
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20015} executed. 8.215701 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20015} clearParameters. 
+DEBUG Thread-66 druid.sql.Connection - {conn-10004} pool-recycle
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} Types : [VARCHAR]
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} executed. 0.403514 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50098} open
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50098} Header: [uid, version, sale_num, stock]
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50098} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-73 druid.sql.ResultSet - {conn-10010, pstmt-20010, rs-50098} closed
+DEBUG Thread-73 druid.sql.Statement - {conn-10010, pstmt-20010} clearParameters. 
+DEBUG Thread-73 druid.sql.Connection - {conn-10010} commited
+DEBUG Thread-73 druid.sql.Connection - {conn-10010} setAutoCommit true
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20013} executed. 12.078981 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20013} clearParameters. 
+DEBUG Thread-73 druid.sql.Connection - {conn-10010} pool-recycle
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} Types : [VARCHAR]
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} executed. 0.373168 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50099} open
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50099} Header: [uid, version, sale_num, stock]
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50099} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-69 druid.sql.ResultSet - {conn-10011, pstmt-20011, rs-50099} closed
+DEBUG Thread-69 druid.sql.Statement - {conn-10011, pstmt-20011} clearParameters. 
+DEBUG Thread-69 druid.sql.Connection - {conn-10011} commited
+DEBUG Thread-69 druid.sql.Connection - {conn-10011} setAutoCommit true
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20016} executed. 11.637008 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20016} clearParameters. 
+DEBUG Thread-69 druid.sql.Connection - {conn-10011} pool-recycle
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [VARCHAR]
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 0.405918 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50100} open
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50100} Header: [uid, version, sale_num, stock]
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50100} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-71 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50100} closed
+DEBUG Thread-71 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20017} executed. 14.464611 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-71 druid.sql.Connection - {conn-10009} commited
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20017} clearParameters. 
+DEBUG Thread-71 druid.sql.Connection - {conn-10009} setAutoCommit true
+DEBUG Thread-71 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} Types : [VARCHAR]
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} executed. 0.627055 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50101} open
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50101} Header: [uid, version, sale_num, stock]
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50101} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-74 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50101} closed
+DEBUG Thread-74 druid.sql.Statement - {conn-10006, pstmt-20009} clearParameters. 
+DEBUG Thread-74 druid.sql.Connection - {conn-10006} commited
+DEBUG Thread-74 druid.sql.Connection - {conn-10006} setAutoCommit true
+DEBUG Thread-74 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20014} executed. 17.339084 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20014} clearParameters. 
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} Types : [VARCHAR]
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 0.609327 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50102} open
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50102} Header: [uid, version, sale_num, stock]
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50102} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-72 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50102} closed
+DEBUG Thread-72 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG Thread-72 druid.sql.Connection - {conn-10002} commited
+DEBUG Thread-72 druid.sql.Connection - {conn-10002} setAutoCommit true
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20018} executed. 20.249614 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-72 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20018} clearParameters. 
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.477427 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50103} open
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50103} Header: [uid, version, sale_num, stock]
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50103} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-70 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50103} closed
+DEBUG Thread-70 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG Thread-70 druid.sql.Connection - {conn-10001} commited
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20019} executed. 23.299255 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-70 druid.sql.Connection - {conn-10001} setAutoCommit true
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20019} clearParameters. 
+DEBUG Thread-70 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} Types : [VARCHAR]
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} executed. 0.475324 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50104} open
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50104} Header: [uid, version, sale_num, stock]
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50104} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 7, 77, 23]
+DEBUG Thread-68 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50104} closed
+DEBUG Thread-68 druid.sql.Statement - {conn-10003, pstmt-20008} clearParameters. 
+DEBUG Thread-68 druid.sql.Connection - {conn-10003} commited
+DEBUG Thread-68 druid.sql.Connection - {conn-10003} setAutoCommit true
+DEBUG Thread-68 druid.sql.Connection - {conn-10003} pool-recycle
+DEBUG Thread-75 druid.sql.Connection - {conn-10007} commited
+DEBUG Thread-75 druid.sql.Connection - {conn-10007} setAutoCommit true
+DEBUG Thread-75 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-9666-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-9666-exec-7 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-9666-exec-7 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG http-nio-9666-exec-7 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-9666-exec-7 druid.sql.Statement - {conn-10005, pstmt-20001, rs-50105} query executed. 0.925108 millis. select goodsstock0_.id as id1_0_, goodsstock0_.create_date as create_d2_0_, goodsstock0_.create_id as create_i3_0_, goodsstock0_.uid as uid4_0_, goodsstock0_.update_date as update_d5_0_, goodsstock0_.update_id as update_i6_0_, goodsstock0_.buy_num as buy_num7_0_, goodsstock0_.goods_name as goods_na8_0_, goodsstock0_.goods_price as goods_pr9_0_, goodsstock0_.sale_num as sale_nu10_0_, goodsstock0_.stock as stock11_0_, goodsstock0_.version as version12_0_ from goods_stock goodsstock0_ where goodsstock0_.uid=?
+DEBUG http-nio-9666-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50105} open
+DEBUG http-nio-9666-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50105} Header: [id, create_date, create_id, uid, update_date, update_id, buy_num, goods_name, goods_price, sale_num, stock, version]
+DEBUG http-nio-9666-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50105} Result: [1, 2018-08-10 14:49:56.0, 07074c6d-27d5-4189-bdd0-6f245c83b767, a6ad9505-e6c5-4e44-b049-113ec77f6033, null, null, null, RR液晶表, 883, 88, 12, 8]
+DEBUG http-nio-9666-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50105} closed
+DEBUG http-nio-9666-exec-7 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG Thread-76 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG Thread-81 druid.sql.Connection - {conn-10003} pool-connect
+DEBUG Thread-80 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG Thread-81 druid.sql.Connection - {conn-10003} setAutoCommit false
+DEBUG Thread-80 druid.sql.Connection - {conn-10001} setAutoCommit false
+DEBUG Thread-78 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG Thread-78 druid.sql.Connection - {conn-10002} setAutoCommit false
+DEBUG Thread-77 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG Thread-77 druid.sql.Connection - {conn-10006} setAutoCommit false
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.548034 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50106} open
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50106} Header: [uid, version, sale_num, stock]
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50106} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 8, 88, 12]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} Types : [VARCHAR]
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50106} closed
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} executed. 1.003527 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50107} open
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50107} Header: [uid, version, sale_num, stock]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20018} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 8]
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50107} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 8, 88, 12]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20018} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20018} executed. 0.524297 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20018} clearParameters. 
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50107} closed
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} clearParameters. 
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.452488 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50108} open
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50108} Header: [uid, version, sale_num, stock]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20017} Parameters : [11, 11, a6ad9505-e6c5-4e44-b049-113ec77f6033, 8]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20017} Types : [BIGINT, BIGINT, VARCHAR, INTEGER]
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50108} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-80 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50108} closed
+DEBUG Thread-80 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20017} executed. 1.289863 millis. update
+        goods_stock
+        set
+         
+            stock = stock - ?,
+         
+        sale_num = sale_num + ?,
+        version  = version + 1
+        where
+        uid = ?
+        and
+        version = ?
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20017} clearParameters. 
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} Types : [VARCHAR]
+DEBUG Thread-81 druid.sql.Statement - {conn-10003, pstmt-20008} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-81 druid.sql.Statement - {conn-10003, pstmt-20008} Types : [VARCHAR]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} executed. 0.673024 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50109} open
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50109} Header: [uid, version, sale_num, stock]
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50109} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 8, 88, 12]
+DEBUG Thread-81 druid.sql.Statement - {conn-10003, pstmt-20008} executed. 1.447303 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-77 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50109} closed
+DEBUG Thread-81 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50110} open
+DEBUG Thread-81 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50110} Header: [uid, version, sale_num, stock]
+DEBUG Thread-77 druid.sql.Statement - {conn-10006, pstmt-20009} clearParameters. 
+DEBUG Thread-81 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50110} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-81 druid.sql.ResultSet - {conn-10003, pstmt-20008, rs-50110} closed
+DEBUG Thread-81 druid.sql.Statement - {conn-10003, pstmt-20008} clearParameters. 
+DEBUG Thread-78 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-78 druid.sql.Statement - {conn-10002, pstmt-20004} Types : [VARCHAR]
+DEBUG Thread-77 druid.sql.Connection - {conn-10006} commited
+DEBUG Thread-77 druid.sql.Connection - {conn-10006} setAutoCommit true
+DEBUG Thread-77 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG Thread-76 druid.sql.Connection - {conn-10007} setAutoCommit false
+DEBUG Thread-81 druid.sql.Connection - {conn-10003} commited
+DEBUG Thread-81 druid.sql.Connection - {conn-10003} setAutoCommit true
+DEBUG Thread-78 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 3.053547 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-78 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50111} open
+DEBUG Thread-78 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50111} Header: [uid, version, sale_num, stock]
+DEBUG Thread-78 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50111} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-76 druid.sql.Statement - {conn-10007, pstmt-20005} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-76 druid.sql.Statement - {conn-10007, pstmt-20005} Types : [VARCHAR]
+DEBUG Thread-78 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50111} closed
+DEBUG Thread-78 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG Thread-76 druid.sql.Statement - {conn-10007, pstmt-20005} executed. 0.495454 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-76 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50112} open
+DEBUG Thread-76 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50112} Header: [uid, version, sale_num, stock]
+DEBUG Thread-76 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50112} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-79 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG Thread-76 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50112} closed
+DEBUG Thread-79 druid.sql.Connection - {conn-10006} setAutoCommit false
+DEBUG Thread-76 druid.sql.Statement - {conn-10007, pstmt-20005} clearParameters. 
+DEBUG Thread-85 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG Thread-85 druid.sql.Connection - {conn-10009} setAutoCommit false
+DEBUG Thread-76 druid.sql.Connection - {conn-10007} commited
+DEBUG Thread-76 druid.sql.Connection - {conn-10007} setAutoCommit true
+DEBUG Thread-76 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG Thread-84 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG Thread-78 druid.sql.Connection - {conn-10002} commited
+DEBUG Thread-84 druid.sql.Connection - {conn-10007} setAutoCommit false
+DEBUG Thread-78 druid.sql.Connection - {conn-10002} setAutoCommit true
+DEBUG Thread-81 druid.sql.Connection - {conn-10003} pool-recycle
+DEBUG Thread-78 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Thread-79 druid.sql.Statement - {conn-10006, pstmt-20009} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-85 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-85 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [VARCHAR]
+DEBUG Thread-79 druid.sql.Statement - {conn-10006, pstmt-20009} Types : [VARCHAR]
+DEBUG Thread-85 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 0.767669 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-79 druid.sql.Statement - {conn-10006, pstmt-20009} executed. 0.818446 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-85 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50113} open
+DEBUG Thread-79 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50114} open
+DEBUG Thread-79 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50114} Header: [uid, version, sale_num, stock]
+DEBUG Thread-85 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50113} Header: [uid, version, sale_num, stock]
+DEBUG Thread-79 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50114} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-85 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50113} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-85 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50113} closed
+DEBUG Thread-85 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
+DEBUG Thread-79 druid.sql.ResultSet - {conn-10006, pstmt-20009, rs-50114} closed
+DEBUG Thread-79 druid.sql.Statement - {conn-10006, pstmt-20009} clearParameters. 
+DEBUG Thread-79 druid.sql.Connection - {conn-10006} commited
+DEBUG Thread-85 druid.sql.Connection - {conn-10009} commited
+DEBUG Thread-85 druid.sql.Connection - {conn-10009} setAutoCommit true
+DEBUG Thread-82 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG Thread-82 druid.sql.Connection - {conn-10002} setAutoCommit false
+DEBUG Thread-79 druid.sql.Connection - {conn-10006} setAutoCommit true
+DEBUG Thread-79 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG Thread-85 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG Thread-83 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG Thread-83 druid.sql.Connection - {conn-10009} setAutoCommit false
+DEBUG Thread-84 druid.sql.Statement - {conn-10007, pstmt-20005} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-84 druid.sql.Statement - {conn-10007, pstmt-20005} Types : [VARCHAR]
+DEBUG Thread-83 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-83 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [VARCHAR]
+DEBUG Thread-84 druid.sql.Statement - {conn-10007, pstmt-20005} executed. 0.529106 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-84 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50115} open
+DEBUG Thread-84 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50115} Header: [uid, version, sale_num, stock]
+DEBUG Thread-84 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50115} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-82 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : [a6ad9505-e6c5-4e44-b049-113ec77f6033]
+DEBUG Thread-82 druid.sql.Statement - {conn-10002, pstmt-20004} Types : [VARCHAR]
+DEBUG Thread-84 druid.sql.ResultSet - {conn-10007, pstmt-20005, rs-50115} closed
+DEBUG Thread-84 druid.sql.Statement - {conn-10007, pstmt-20005} clearParameters. 
+DEBUG Thread-83 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 1.614056 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-83 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50116} open
+DEBUG Thread-84 druid.sql.Connection - {conn-10007} commited
+DEBUG Thread-83 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50116} Header: [uid, version, sale_num, stock]
+DEBUG Thread-84 druid.sql.Connection - {conn-10007} setAutoCommit true
+DEBUG Thread-82 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 0.814239 millis. select
+        uid uid,
+        version version,
+        sale_num saleNum,
+        stock stock
+        from
+        goods_stock
+        where
+        uid = ?
+DEBUG Thread-82 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50117} open
+DEBUG Thread-82 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50117} Header: [uid, version, sale_num, stock]
+DEBUG Thread-83 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50116} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-84 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG Thread-82 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50117} Result: [a6ad9505-e6c5-4e44-b049-113ec77f6033, 9, 99, 1]
+DEBUG Thread-82 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50117} closed
+DEBUG Thread-83 druid.sql.ResultSet - {conn-10009, pstmt-20007, rs-50116} closed
+DEBUG Thread-82 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG Thread-83 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
+DEBUG Thread-82 druid.sql.Connection - {conn-10002} commited
+DEBUG Thread-82 druid.sql.Connection - {conn-10002} setAutoCommit true
+DEBUG Thread-83 druid.sql.Connection - {conn-10009} commited
+DEBUG Thread-83 druid.sql.Connection - {conn-10009} setAutoCommit true
+DEBUG Thread-82 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Thread-83 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG Thread-80 druid.sql.Connection - {conn-10001} commited
+DEBUG Thread-80 druid.sql.Connection - {conn-10001} setAutoCommit true
+DEBUG Thread-80 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-9666-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 104.339474 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 173.581338 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
 DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
 DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 52.209847 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 38.979215 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 25.656942 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.521997 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 33.022951 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 48.017268 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 52.431586 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.672827 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 81.799474 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 26.317347 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 153.950367 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.285629 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.572344 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 28.979097 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.236955 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 24.32141 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 29.014251 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.258966 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 43.955988 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.916132 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 46.255086 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 59.520272 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.535218 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 122.348577 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.341409 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 42.631873 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 38.98943 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 42.464519 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 40.826726 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 39.629104 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.197138 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.760195 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 38.731338 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.690841 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 53.765916 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 47.995334 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.284022 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 51.96227 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 47.238783 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.444466 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 26.618405 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 29.4403 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 49.653257 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 58.659762 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 88.361159 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.738418 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 26.711247 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 29.995544 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.087628 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 24.837295 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 85.663053 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 57.386725 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 51.562963 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 29.234786 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 40.194564 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 83.337215 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.525001 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 39.578626 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.555584 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 195.696191 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 45.603094 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 23.567262 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.797307 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 30.211272 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 50.243956 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10002} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10003} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10004} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10005} closed
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.165589 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-9666-exec-1 freemarker.cache - Couldn't find template in cache for "error.ftl"("zh_CN", UTF-8, parsed); will try to load it.
-DEBUG http-nio-9666-exec-1 freemarker.cache - TemplateLoader.findTemplateSource("error_zh_CN.ftl"): Not found
-DEBUG http-nio-9666-exec-1 freemarker.cache - TemplateLoader.findTemplateSource("error_zh.ftl"): Not found
-DEBUG http-nio-9666-exec-1 freemarker.cache - TemplateLoader.findTemplateSource("error.ftl"): Not found
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 33.336328 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 164.516545 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.034041 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.934995 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 46.095243 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 39.305812 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 40.971246 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 44.321644 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 47.745955 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 75.224569 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 33.709496 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 39.454538 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.193166 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 49279.401766 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 36.603801 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 46.239162 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 53.047222 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 40.615805 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 23.422141 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 91.96304 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.301449 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 33.356759 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 35.373427 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 138.77878 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.159738 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 28.060599 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 30.109718 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 27.321175 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 11903.795405 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 44.167209 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 40.689417 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 45.560429 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.497752 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 46.233153 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.072213 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 42.658313 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 35.199764 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 45.272592 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.496145 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.062598 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 87.244961 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 91.848265 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 44.265458 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 29.123017 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 35.91425 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 33.15365 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 42.043577 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 78.895255 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.255061 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 51.195203 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 38.606647 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.509849 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 43.047104 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 34.77642 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 84.160562 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 41.219176 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 42.26386 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 44.321979 millis. update hua_yang_area set area_person = area_person+1 where area_person <10000
-DEBUG pool-1-thread-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG pool-1-thread-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10002} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10003} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10004} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} connected
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-connect
-DEBUG restartedMain druid.sql.Connection - {conn-10005} pool-recycle
