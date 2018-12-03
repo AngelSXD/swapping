@@ -12,7 +12,7 @@ public class AutoUpdateDateSchedule {
     HuaYangService service;
 
     //每一分钟执行一次
-    @Scheduled(cron = "0 0/1 * * * ?")
+//    @Scheduled(cron = "0 0/1 * * * ?")
     public void dealUpdateTask(){
         System.out.println("定时更新数据库操作--->开始");
 

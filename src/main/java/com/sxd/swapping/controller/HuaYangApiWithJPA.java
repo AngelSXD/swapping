@@ -47,6 +47,7 @@ public class HuaYangApiWithJPA {
         UniVerResponse<HuaYangArea> response = new UniVerResponse<>();
         try {
             huaYangArea.initEntity();
+            System.out.println("jpa测试java初始化时间："+huaYangArea.getCreateDate());
             response.beTrue(huaYangService.insert(huaYangArea));
         } catch (Exception e) {
             throw new MyException("插入失败",UniVerResponse.ERROR_BUSINESS);

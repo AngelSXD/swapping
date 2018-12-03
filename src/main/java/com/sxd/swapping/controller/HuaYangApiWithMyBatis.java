@@ -25,6 +25,7 @@ public class HuaYangApiWithMyBatis {
     public UniVerResponse<HuaYangArea> insert(@RequestBody HuaYangArea huaYangArea){
         UniVerResponse.checkField(huaYangArea,"areaName","areaPerson");
         huaYangArea.initEntity();
+        System.out.println("mybatis测试java初始化时间："+ huaYangArea.getCreateDate());
         UniVerResponse<HuaYangArea> response = new UniVerResponse<>();
         try {
             huaYangArea = huaYangService.insertWithMybatis(huaYangArea);
