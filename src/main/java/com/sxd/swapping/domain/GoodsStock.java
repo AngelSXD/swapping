@@ -1,8 +1,12 @@
 package com.sxd.swapping.domain;
 
 import com.sxd.swapping.base.BaseBean;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -15,6 +19,8 @@ import javax.persistence.Transient;
 @Table
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class GoodsStock  extends BaseBean {
 
     private String goodsName;//商品名称

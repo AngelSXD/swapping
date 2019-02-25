@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class FileDownloadAndUploadController {
 
 
     public static final String PAKING_DATE_FILE_PATH = "paking_data";
