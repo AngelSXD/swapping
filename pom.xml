@@ -131,6 +131,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- spring-boot-starter-data-elasticsearch -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+
+
 		<!--commons-lang3 工具类  https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

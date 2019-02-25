@@ -1,0 +1,60 @@
+{
+  "builder": {
+    "properties": {
+      "id": {
+        "type": "long"
+      },
+      "buildName": {
+        "type": "text",
+        "analyzer": "ikSearchAnalyzer",
+        "search_analyzer": "ikSearchAnalyzer",
+        "fields": {
+          "pinyin": {
+            "type": "text",
+            "analyzer": "pinyinSimpleIndexAnalyzer",
+            "search_analyzer": "pinyinSimpleIndexAnalyzer"
+          }
+        }
+      },
+      "remark": {
+        "type": "text",
+        "analyzer": "ikSearchAnalyzer",
+        "search_analyzer": "ikSearchAnalyzer",
+        "fields": {
+          "pinyin": {
+            "type": "text",
+            "analyzer": "pinyinSimpleIndexAnalyzer",
+            "search_analyzer": "pinyinSimpleIndexAnalyzer"
+          }
+        }
+      },
+      "email": {
+        "type": "keyword",
+        "ignore_above": 50
+      },
+      "buildNum": {
+        "type": "long"
+      },
+      "buildDate": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      },
+      "integral": {
+        "type": "float"
+      },
+      "pageNum": {
+        "type": "long"
+      },
+      "pageSize": {
+        "type": "long"
+      },
+      "query": {
+        "properties": {
+          "match_all": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
