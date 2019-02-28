@@ -213,6 +213,13 @@
 			<version>2.6.2</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<!-- logback 推送日志文件到logstash -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>5.1</version>
+		</dependency>
 	</dependencies>
 
 
