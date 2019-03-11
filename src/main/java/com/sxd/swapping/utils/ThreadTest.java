@@ -10,7 +10,7 @@ public class ThreadTest {
     /**
      * 主线程
      */
-    @Test
+//    @Test
     public  void  test(){
 
         //开启10个多线程

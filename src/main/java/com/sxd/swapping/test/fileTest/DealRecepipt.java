@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
  */
 public class DealRecepipt {
 
-    public static void main(String[] args) {
-        readFile();
-    }
+//    public static void main(String[] args) {
+//        readFile();
+//    }
 
 
     private static  void readFile(){

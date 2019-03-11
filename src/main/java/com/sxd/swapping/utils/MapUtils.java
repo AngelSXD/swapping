@@ -55,25 +55,25 @@ public class MapUtils {
     }
 
 
-    public static void main(String[] args) {
-        Map<String,String>  hashMap = new TreeMap<>();
-        long beginTime = System.currentTimeMillis();
-        System.out.println("TreeMap存储开始时间-->"+beginTime);
-        for (int i = 0; i < 10000000; i++) {
-            hashMap.put(UUID.randomUUID().toString(),UUID.randomUUID().toString());
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("TreeMap存储结束时间-->"+endTime);
-        System.out.println("TreeMap存储消耗："+(endTime-beginTime)+"ms");
-
-        System.out.println("TreeMap【forEach方式】读取开始时间-->"+endTime);
-        //不能使用外部定义变量 除非final类型 例如：List
-        hashMap.forEach((k,v)->{
-            System.out.println(k +"："+v);
-        });
-        long endTime2 = System.currentTimeMillis();
-        System.out.println("TreeMap【forEach方式】读取结束时间-->"+endTime2);
-        System.out.println("TreeMap【forEach方式】读取消耗："+(endTime2-endTime)+"ms");
-    }
+//    public static void main(String[] args) {
+//        Map<String,String>  hashMap = new TreeMap<>();
+//        long beginTime = System.currentTimeMillis();
+//        System.out.println("TreeMap存储开始时间-->"+beginTime);
+//        for (int i = 0; i < 10000000; i++) {
+//            hashMap.put(UUID.randomUUID().toString(),UUID.randomUUID().toString());
+//        }
+//        long endTime = System.currentTimeMillis();
+//        System.out.println("TreeMap存储结束时间-->"+endTime);
+//        System.out.println("TreeMap存储消耗："+(endTime-beginTime)+"ms");
+//
+//        System.out.println("TreeMap【forEach方式】读取开始时间-->"+endTime);
+//        //不能使用外部定义变量 除非final类型 例如：List
+//        hashMap.forEach((k,v)->{
+//            System.out.println(k +"："+v);
+//        });
+//        long endTime2 = System.currentTimeMillis();
+//        System.out.println("TreeMap【forEach方式】读取结束时间-->"+endTime2);
+//        System.out.println("TreeMap【forEach方式】读取消耗："+(endTime2-endTime)+"ms");
+//    }
 
 }
