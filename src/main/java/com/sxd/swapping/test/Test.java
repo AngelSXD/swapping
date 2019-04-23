@@ -18,5 +18,7 @@ public class Test {
 ////        System.out.println(last1000);
 //    }
 
+    public static void main(String[] args) {
 
+    }
 }
