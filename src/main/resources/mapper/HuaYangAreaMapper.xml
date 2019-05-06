@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sxd.swapping.dao.mybatis.HuaYangAreaMapper">
-
+    
+    <update id="addRows">
+      ${ddl}
+    </update>
+    
     <select
             id="findByNameAndPersonAndCreateDate"
             parameterType="com.sxd.swapping.domain.HuaYangArea"

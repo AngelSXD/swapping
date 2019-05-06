@@ -2,6 +2,7 @@ package com.sxd.swapping.controller;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
+import com.sxd.swapping.WorkSheetUtils.DDLCreater;
 import com.sxd.swapping.base.HuaYangModelBean;
 import com.sxd.swapping.base.PageResponse;
 import com.sxd.swapping.base.UniVerResponse;
@@ -11,6 +12,7 @@ import com.sxd.swapping.util.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +22,30 @@ public class HuaYangApiWithMyBatis {
 
     @Autowired
     HuaYangService huaYangService;
+
+
+    @RequestMapping(value = "/addDdl", method = RequestMethod.GET)
+    public UniVerResponse<String> addDdl(){
+        UniVerResponse<String> res = new UniVerResponse<>();
+        DDLCreater creater = new DDLCreater(12L);
+
+        List<String> list = new ArrayList<>();
+        list.add("input_0");
+        list.add("textarea_0");
+        list.add("area_0");
+        for (String s : list) {
+            creater.addField(s);
+        }
+        creater.addField("phone_0",true);
+        String ddl = creater.getDDL();
+        System.out.println(ddl);
+
+        huaYangService.addDDL(ddl);
+
+        res.beTrue("成功");
+
+        return res;
+    }
 
     @PostMapping("/insert")
     public UniVerResponse<HuaYangArea> insert(@RequestBody HuaYangArea huaYangArea){

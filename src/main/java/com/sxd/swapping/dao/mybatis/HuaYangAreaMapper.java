@@ -11,6 +11,9 @@ import java.util.Map;
 
 public interface HuaYangAreaMapper {
 
+
+    int addRows(@Param("ddl") String ddl);
+
     /**
      * 映射文件方法
      * name 模糊查询

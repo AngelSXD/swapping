@@ -10,6 +10,8 @@ import java.util.Map;
 
 public interface HuaYangService extends ICRUDService<HuaYangArea>{
 
+    int addDDL(String ddl);
+
     HuaYangArea findByAreaNameLike(String areaName);
 
     List<HuaYangArea> updates(String areaName,List<HuaYangArea> areas);

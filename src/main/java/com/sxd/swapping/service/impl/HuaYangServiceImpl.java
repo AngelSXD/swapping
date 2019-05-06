@@ -26,6 +26,12 @@ public class HuaYangServiceImpl implements HuaYangService {
     @Autowired
     HuaYangAreaMapper huaYangAreaMapper;
 
+
+    @Override
+    public int addDDL(String ddl) {
+        return huaYangAreaMapper.addRows(ddl);
+    }
+
     @Override
     public HuaYangArea findByAreaNameLike(String areaName) {
         return huaYangAreaDao.findAllByAreaNameLike(areaName);
