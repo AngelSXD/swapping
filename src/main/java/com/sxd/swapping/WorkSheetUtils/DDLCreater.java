@@ -1,6 +1,8 @@
 package com.sxd.swapping.WorkSheetUtils;
 
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +17,13 @@ import java.util.List;
  * 新增：
  *  新增表的列
  *
+ * 删除：
+ *  删除表的列
  *
  * =============未实现=================
  * 更新：
  *  更新列的类型信息
  *  重命名列[此处用不到]
- *
- *
- *
- * 删除：
- *  删除表的列
- *  删除索引[待定]
  *
  *
  * =============注意事项================
@@ -51,9 +49,16 @@ public class DDLCreater {
     /**
      * ADD规格
      */
-    public static final String ADD_COL_DDL = " ADD  %s  %s %s ,";
+    public static final String ADD_COL_DDL = " ADD  `%s`  %s %s %s,";
+
+    /**
+     * DEL规格
+     */
+    public static final String DEL_COL_DDL = " DROP  column  `%s`,";
 
 
+    public static final Integer DDL_TYPE_ADD = 1;   //新增
+    public static final Integer DDL_TYPE_DEL = 2;   //删除
 
 
     /**
@@ -72,6 +77,7 @@ public class DDLCreater {
 
     private List<Boolean> requiredList = new ArrayList<>();//是否必填List
 
+    private List<String> commentList = new ArrayList<>();//注释List
 
     /**
      * 添加列信息
@@ -87,9 +93,21 @@ public class DDLCreater {
      * @param required  是否必填 默认false 不必填
      */
     public void addField(String field, boolean required) {
+        this.addField(field,required,null);
+    }
+
+    /**
+     * 添加列信息
+     * @param field 列名 eq:  input_0   textarea_1 input-number_3
+     * @param required  是否必填 默认false 不必填
+     * @param comment   字段注释，默认为null
+     */
+    public void addField(String field, boolean required, String comment) {
         colList.add(field);
         requiredList.add(required);
+        commentList.add(comment);
     }
+
 
 
     /**
@@ -98,26 +116,58 @@ public class DDLCreater {
      *
      * @return
      */
-    public String getDDL() {
+    public String getAddDDL() {
         StringBuffer result = new StringBuffer();
-        result.append(String.format(ALTER_TABLE,this.tableName));
+        return ddlShunt(result,DDL_TYPE_ADD);
+    }
 
-        for (int i = 0; i < colList.size(); i++) {
-            String field = colList.get(i);
-            result.append(
-                    String.format(
-                            ADD_COL_DDL,field,
-                            getDataType(field.split("_")[0]),
-                            requiredList.get(i) ? "NOT NULL" : ""));
-        }
 
-        deleteLastChar(result);
-
-        return result.toString();
+    /**
+     * 获取  删除列 DDL
+     * Del DDL
+     * @return
+     */
+    public String getDelDDL() {
+        StringBuffer result = new StringBuffer();
+        return ddlShunt(result,DDL_TYPE_DEL);
     }
 
 
 
+    /**
+     * DDL 分流生成器
+     * @param result    原始SB
+     * @param ddlType   要生成的DDL类型
+     * @return
+     */
+    private String ddlShunt(StringBuffer result,Integer ddlType){
+        result.append(String.format(ALTER_TABLE,this.tableName));
+
+        for (int i = 0; i < colList.size(); i++) {
+            String field = colList.get(i);
+            String ddl = "";
+
+            //新增DDL
+            if(ddlType == DDL_TYPE_ADD){
+                ddl = String.format(
+                        ADD_COL_DDL,
+                        field,
+                        getDataType(field.split("_")[0]),
+                        requiredList.get(i) ? " NOT NULL" : " ",
+                        getComment(commentList.get(i))
+                );
+            }else {
+            //删除DDL
+                ddl = String.format(DEL_COL_DDL, field);
+            }
+
+
+            result.append(ddl);
+        }
+
+        deleteLastChar(result);
+        return result.toString();
+    }
 
 
     /**
@@ -184,6 +234,14 @@ public class DDLCreater {
         }
     }
 
+    /**
+     * 获取注释
+     * @param comment
+     * @return
+     */
+    private String getComment(String comment){
+        return StringUtils.isBlank(comment) ? " " : " COMMENT  '"+comment+"'";
+    }
 
 
 }

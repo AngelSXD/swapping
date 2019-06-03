@@ -37,7 +37,7 @@ public class HuaYangApiWithMyBatis {
             creater.addField(s);
         }
         creater.addField("phone_0",true);
-        String ddl = creater.getDDL();
+        String ddl = creater.getAddDDL();
         System.out.println(ddl);
 
         huaYangService.addDDL(ddl);
