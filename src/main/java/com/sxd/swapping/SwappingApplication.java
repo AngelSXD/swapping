@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import javax.annotation.PostConstruct;
+import java.util.TimeZone;
+
 @EnableScheduling
 @SpringBootApplication
 @MapperScan("com.sxd.swapping.dao.mybatis")
@@ -18,5 +21,10 @@ public class SwappingApplication {
 		 */
 		System.setProperty("es.set.netty.runtime.available.processors", "false");
 		SpringApplication.run(SwappingApplication.class, args);
+	}
+
+	@PostConstruct
+	void started() {
+		TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
 	}
 }
