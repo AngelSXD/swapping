@@ -1,11 +1,16 @@
 package com.sxd.swapping.aop.listener;
 
 
+import com.sxd.swapping.aop.context.MyOperationHandlerContext;
 import com.sxd.swapping.aop.doamin.MyAspectEvent;
+import com.sxd.swapping.aop.handler.MyAbstractOperationHandler;
 import com.sxd.swapping.enums.MyEnum;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  *监听者模式  的监听者对象
@@ -13,30 +18,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyEventListener {
 
+    @Resource
+    private MyOperationHandlerContext operationHandlerContext;
 
-    @Async
+    @Resource
+    private ThreadPoolTaskExecutor taskExecutor1;
+
+    //使用@Async指定线程池 的 异步调用 https://www.jb51.net/article/105214.htm
+    @Async("taskExecutor1")
     @EventListener
     public void listener(MyAspectEvent myAspectEvent){
         //获取到 自定义注解上的属性
         MyEnum[] myEnums = myAspectEvent.getMyEnums();
-        String myName = myAspectEvent.getMyName();
 
-        //获取到切面方法的入参
-        Object[] requertParams = myAspectEvent.getRequertParams();
-
-        //获取到切面方法的出参
-        Object returnVal = myAspectEvent.getReturnVal();
+        //根据自定义注解 使用处 指定的补充事件枚举项，分别执行 对应的具体补充事件handler实现的逻辑
         for (MyEnum myEnum : myEnums) {
-            if (myEnum == MyEnum.ONE) {
-                System.out.printf("做第一件事情");
-            }
-            if (myEnum == MyEnum.TWO) {
-                System.out.printf("做第二件事件");
-            }
-
-            if(myEnum == MyEnum.ALL) {
-                System.out.printf("做所有的事情");
-            }
+            MyAbstractOperationHandler operationHandler = operationHandlerContext.getOperationHandler(myEnum);
+            taskExecutor1.execute(() -> operationHandler.handleBusiness(myAspectEvent));
         }
 
     }

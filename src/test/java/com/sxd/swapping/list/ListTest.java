@@ -1,6 +1,7 @@
 package com.sxd.swapping.list;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import com.sxd.swapping.Bean.StuA;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -33,8 +34,8 @@ public class ListTest {
         list.add(student);
 
         Student student2 = new Student();
-        student2.setId(2);
-        student2.setName("张三");
+        student2.setId(1);
+        student2.setName("张三1");
         student2.setAge(1L);
         student2.setMcList(mcList);
 
@@ -50,26 +51,26 @@ public class ListTest {
         list.add(student3);
 
         Student student4 = new Student();
-        student4.setId(4);
-        student4.setName("李四");
+        student4.setId(3);
+        student4.setName("李四3");
         student4.setAge(2L);
         student4.setMcList(mcList);
 
         list.add(student4);
 
-        a:
-        for (Student stu : list) {
-            System.out.println(stu.getId() + " 次流转");
+        Map<Integer, List<Student>> map = list.stream().collect(
+                Collectors.toMap(
+                        Student::getId,
+                        stu -> Lists.newArrayList(stu),
+                        (List<Student> newList, List<Student> oldList) -> {
+                            oldList.addAll(newList);
+                            return oldList;
+                        }
+                )
+        );
 
-            b:
-            for (String s : mcList) {
-                if (stu.getId().equals(2) && s.equals("2")) {
-                    System.out.println((stu.getId() + "次" + s + "号跳脱》》》》》》"));
-                    break;
-                }
-                System.out.println(stu.getId() + "次" + s + "号流转");
-            }
-        }
+        System.out.println(JSON.toJSONString(map));
+
     }
 
 

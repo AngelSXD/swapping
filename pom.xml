@@ -269,6 +269,12 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.5</version>
 		</dependency>
+	<!-- 实现排列组合		-->
+		<dependency>
+			<groupId>com.github.dpaukov</groupId>
+			<artifactId>combinatoricslib3</artifactId>
+			<version>3.3.0</version>
+		</dependency>
 
 		<!-- 阿里巴巴easyexcel -->
 		<dependency>
@@ -319,7 +325,11 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.8</version>
 		</dependency>
-
+		<!--	java内发送http请求	-->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
 
 	</dependencies>
 

@@ -7,7 +7,6 @@ import java.io.Serializable;
  */
 public enum MyEnum implements Serializable {
 
-    ALL(0,"全部"),
     ONE(1,"第一个"),
     TWO(2,"第二个");
 

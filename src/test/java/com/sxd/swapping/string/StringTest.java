@@ -2,6 +2,10 @@ package com.sxd.swapping.string;
 
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
+
 import java.text.MessageFormat;
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
@@ -22,9 +26,11 @@ public class StringTest {
 
 
     public static void main(String[] args) {
-String  str = "pro:asyn:export:record2:12123123:1:12312312312312";
-        String[] split = str.split(":");
-        System.out.println(split[split.length-3]);
+    Long  str = 2008101030000001L;
+
+        System.out.println(str.toString().substring(6,9));
+
+
     }
 
 

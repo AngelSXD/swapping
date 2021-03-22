@@ -21,24 +21,7 @@ public class GuavaSetTest {
 
     @Test
     public void setsTest(){
-        Set<String> set1 = new HashSet<>();
-        set1.add("1");
-        set1.add("2");
-        set1.add("3");
-        set1.add("4");
 
-
-        Set<String> set2 = new HashSet<>();
-
-
-
-        String[] arr2 = new String[1];
-        String[] arr = new String[set1.size()];
-        arr2 = set1.toArray(arr);
-
-        for (String s : arr2) {
-            System.out.println(s);
-        }
 
 
     }

@@ -4,9 +4,7 @@ import com.sxd.swapping.annotation.MyAnno;
 import com.sxd.swapping.domain.BaseRequestBean;
 import com.sxd.swapping.enums.MyEnum;
 import com.sxd.swapping.service.BaseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BaseServiceImpl implements BaseService {
