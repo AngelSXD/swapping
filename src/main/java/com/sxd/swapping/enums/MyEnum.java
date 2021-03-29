@@ -7,8 +7,8 @@ import java.io.Serializable;
  */
 public enum MyEnum implements Serializable {
 
-    ONE(1,"第一个"),
-    TWO(2,"第二个");
+    ONE(1,"第一种补偿业务"),
+    TWO(2,"第二种补偿业务");
 
 
     //值

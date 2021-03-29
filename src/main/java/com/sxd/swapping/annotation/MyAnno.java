@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
 
 /**
  * 自定义注解
+ * 1.运行时注解   https://blog.csdn.net/github_35180164/article/details/52118286
+ * 2.可用在方法的注解 https://blog.csdn.net/qq_37126357/article/details/101196335
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})

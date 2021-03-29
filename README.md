@@ -23,4 +23,6 @@
 
 11.[【mysql】mysql增加version字段实现乐观锁，实现高并发下的订单库存的并发控制，通过开启多线程同时处理模拟多个请求同时到达的情况](https://www.cnblogs.com/sxdcgaq8080/p/9454161.html)
 
-12.留作待续
+12.[【AOP】【Publish-Event】AOP 切面编程 + Spring的publish-event 实现 监听者模式，实现补充业务逻辑开发](https://www.cnblogs.com/sxdcgaq8080/p/14591669.html)
+
+13.留作待续
