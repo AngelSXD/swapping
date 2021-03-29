@@ -1,5 +1,6 @@
 package com.sxd.swapping.guava;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Sets;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,13 @@ public class GuavaSetTest {
     @Test
     public void setsTest(){
 
+        JSON.toJSONString(null);
+        int a = 1;
+        try {
+            a = a/0;
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
 
     }

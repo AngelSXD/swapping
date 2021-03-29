@@ -2,6 +2,7 @@ package com.sxd.swapping.string;
 
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
@@ -12,9 +13,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author: SXD
@@ -26,9 +25,14 @@ public class StringTest {
 
 
     public static void main(String[] args) {
-    Long  str = 2008101030000001L;
+        List<String> a = new ArrayList<>();
+        Set<String> b = new HashSet<>();
+        b.add("1");
+        b.add("2");
 
-        System.out.println(str.toString().substring(6,9));
+        b.removeAll(a);
+
+        System.out.println(b);
 
 
     }

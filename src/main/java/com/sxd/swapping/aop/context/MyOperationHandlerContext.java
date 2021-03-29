@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -23,6 +24,7 @@ public class MyOperationHandlerContext  implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         if (operationHandlerMap == null) {
+            operationHandlerMap = new HashMap<>();
             operationHandlerMap.put(MyEnum.ONE,applicationContext.getBean(MyOneOperationHandler.class));
             operationHandlerMap.put(MyEnum.TWO,applicationContext.getBean(MyTwoOperationHandler.class));
         }

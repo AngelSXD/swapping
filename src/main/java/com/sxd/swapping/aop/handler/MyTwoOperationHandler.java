@@ -22,7 +22,9 @@ public class MyTwoOperationHandler  extends MyAbstractOperationHandler {
         //获取到切面方法的出参
         Object returnVal = operateEvent.getReturnVal();
 
-        System.out.println("做第二种补充业务"+myName);
+        System.out.println("第二种补充业务-打印方法入参：" + requertParams[0].toString());
+        System.out.println("做第二种补充业务："+myName);
+        System.out.println("第二种补充业务-打印方法出参:"+ returnVal.toString());
 
     }
 }

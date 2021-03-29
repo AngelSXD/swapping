@@ -23,7 +23,7 @@ public class FirstController {
 
     @RequestMapping(value = "/aoptest", method = {RequestMethod.GET})
     public String myAopTest(){
-        baseService.saveBaseInfo();
+        baseService.saveBaseInfo("方法入参");
         return "测试成功";
     }
 

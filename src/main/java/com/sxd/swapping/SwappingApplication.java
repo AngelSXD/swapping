@@ -21,6 +21,7 @@ public class SwappingApplication {
 		 */
 		System.setProperty("es.set.netty.runtime.available.processors", "false");
 		SpringApplication.run(SwappingApplication.class, args);
+		System.out.println("SXD-swapping 服务启动成功拉！");
 	}
 
 	@PostConstruct

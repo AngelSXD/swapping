@@ -229,8 +229,12 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-
-
+		<!--	工具包	-->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 		<!--工具包-->
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>

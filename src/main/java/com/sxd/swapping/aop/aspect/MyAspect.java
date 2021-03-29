@@ -18,6 +18,8 @@ import java.lang.reflect.Method;
 /**
  * AOP 切面编程
  * Spring的publish-event  监听者模式
+ *
+ * 另一种方案：https://blog.csdn.net/weixin_43770545/article/details/105971971
  */
 @Component
 @Aspect
