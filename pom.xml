@@ -256,7 +256,6 @@
 			<version>2.6.2</version>
 			<scope>compile</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>

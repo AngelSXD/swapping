@@ -25,4 +25,6 @@
 
 12.[【AOP】【Publish-Event】AOP 切面编程 + Spring的publish-event 实现 监听者模式，实现补充业务逻辑开发](https://www.cnblogs.com/sxdcgaq8080/p/14591669.html)
 
-13.留作待续
+13.[【spring boot】捕获全局异常@RestControllerAdvice](https://www.cnblogs.com/sxdcgaq8080/p/14628303.html)
+
+14.留作待续
