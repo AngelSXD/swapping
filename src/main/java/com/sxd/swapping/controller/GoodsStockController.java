@@ -1,7 +1,7 @@
 package com.sxd.swapping.controller;
 
-import com.sxd.swapping.base.UniVerResponse;
-import com.sxd.swapping.domain.GoodsStock;
+import com.sxd.swapping.mybatis.vo.UniVerResponse;
+import com.sxd.swapping.jpa.pojo.GoodsStock;
 import com.sxd.swapping.service.GoodsStockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

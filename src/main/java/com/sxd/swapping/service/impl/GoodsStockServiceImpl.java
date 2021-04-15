@@ -1,8 +1,8 @@
 package com.sxd.swapping.service.impl;
 
-import com.sxd.swapping.dao.jpa.GoodsStockDao;
-import com.sxd.swapping.dao.mybatis.GoodsStockMapper;
-import com.sxd.swapping.domain.GoodsStock;
+import com.sxd.swapping.jpa.dao.GoodsStockDao;
+import com.sxd.swapping.mybatis.dao.GoodsStockMapper;
+import com.sxd.swapping.jpa.pojo.GoodsStock;
 import com.sxd.swapping.service.GoodsStockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.sxd.swapping.controller;
 
 
-import com.sxd.swapping.base.UniVerResponse;
+import com.sxd.swapping.mybatis.vo.UniVerResponse;
 import com.sxd.swapping.utils.ProjectPath;
 import com.xiaoleilu.hutool.io.FileUtil;
 import org.springframework.http.HttpHeaders;

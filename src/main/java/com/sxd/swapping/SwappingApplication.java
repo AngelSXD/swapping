@@ -10,7 +10,7 @@ import java.util.TimeZone;
 
 @EnableScheduling
 @SpringBootApplication
-@MapperScan("com.sxd.swapping.dao.mybatis")
+@MapperScan("com.sxd.swapping.mybatis.dao")
 public class SwappingApplication {
 
 	public static void main(String[] args) {

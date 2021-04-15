@@ -1,8 +1,7 @@
 package com.sxd.swapping.schedule;
 
-import com.sxd.swapping.service.HuaYangService;
+import com.sxd.swapping.mybatis.service.HuaYangService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +10,7 @@ public class AutoUpdateDateSchedule {
     @Autowired
     HuaYangService service;
 
-    //每一分钟执行一次
+    //每一分钟执行一次  先注释掉
 //    @Scheduled(cron = "0 0/1 * * * ?")
     public void dealUpdateTask(){
         System.out.println("定时更新数据库操作--->开始");

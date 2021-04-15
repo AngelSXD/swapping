@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxd.swapping.dao.mybatis.HuaYangAreaMapper">
+<mapper namespace="com.sxd.swapping.mybatis.dao.HuaYangAreaMapper">
     
     <update id="addRows">
       ${ddl}
@@ -8,8 +8,8 @@
     
     <select
             id="findByNameAndPersonAndCreateDate"
-            parameterType="com.sxd.swapping.domain.HuaYangArea"
-            resultType="com.sxd.swapping.base.HuaYangModelBean">
+            parameterType="com.sxd.swapping.mybatis.pojo.HuaYangArea"
+            resultType="com.sxd.swapping.mybatis.dto.HuaYangModelBeanDTO">
 
 
         select
@@ -40,7 +40,7 @@
     </select>
 
 
-    <select id="findMap" parameterType="com.sxd.swapping.domain.HuaYangArea" resultType="java.util.HashMap">
+    <select id="findMap" parameterType="com.sxd.swapping.mybatis.pojo.HuaYangArea" resultType="java.util.HashMap">
          select
             hy.uid,
             hy.area_name
