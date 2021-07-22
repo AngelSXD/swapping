@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxd.swapping.mybatis.dao.DUMapper">
+
+
+    <select id="queryDU" parameterType="com.sxd.swapping.downloadAndUpload.xlsxDownloadAndUpload.query.DUQuery"
+            resultType="com.sxd.swapping.mybatis.pojo.DownloadUpload">
+        select
+            *
+        from
+            download_upload  du
+        <where>
+            <if test="duId != null">
+                AND du.du_id  = #{duId}
+            </if>
+            <if test="duStatus != null">
+                AND du.du_status  = #{duStatus}
+            </if>
+        </where>
+        <if test="start != null  and pageSize != null">
+            LIMIT #{start}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="countDU" parameterType="com.sxd.swapping.downloadAndUpload.xlsxDownloadAndUpload.query.DUQuery"
+            resultType="java.lang.Integer">
+        select
+            count(id)
+        from
+            download_upload  du
+        <where>
+            <if test="duId != null">
+                AND du.du_id  = #{duId}
+            </if>
+            <if test="duStatus != null">
+                AND du.du_status  = #{duStatus}
+            </if>
+
+        </where>
+    </select>
+
+</mapper>

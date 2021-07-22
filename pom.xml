@@ -29,6 +29,16 @@
 		<spring-cloud.version>Finchley.M9</spring-cloud.version>
 		<spring-statemachine.version>2.0.1.RELEASE</spring-statemachine.version>
 		<vaadin.version>8.3.1</vaadin.version>
+		<easyexcel.version>2.2.7</easyexcel.version>
+		<poi.version>3.17</poi.version>
+		<jedis.version>2.9.0</jedis.version>
+		<xstream.version>1.3.1</xstream.version>
+		<aspectjweaver.version>1.8.8</aspectjweaver.version>
+		<swagger.version>2.8.0</swagger.version>
+		<fastjson.version>1.2.62</fastjson.version>
+		<hutool.version>3.1.0</hutool.version>
+		<javax.mail.version>1.4.5</javax.mail.version>
+		<org.mapstruct.version>1.2.0.CR1</org.mapstruct.version>
 	</properties>
 
 	<dependencies>
@@ -40,6 +50,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<!--	简单理解，aspectjweaver支持切入点表达式等等  aspectjrt支持aop相关注解等等	-->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver.version}</version>
 		</dependency>
 
 		<dependency>
@@ -130,21 +146,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-stream-test-support</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
@@ -155,18 +156,23 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- spring-boot-starter-data-elasticsearch -->
+
+
+		<!-- elasticsearch   start-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>
-
-
-		<!--commons-lang3 工具类  https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<!-- logback 推送日志文件到logstash -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>5.1</version>
 		</dependency>
+		<!-- elasticsearch   end-->
+
+
+
 		<!--mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -191,20 +197,20 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		<!--swagger 2	API文档	-->
+		<!--swagger 2	API文档	 start-->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.8.0</version>
+			<version>${swagger.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.8.0</version>
+			<version>${swagger.version}</version>
 		</dependency>
+		<!--swagger 2	API文档	 end-->
 
-		<!-- redis -->
+		<!-- redis start-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
@@ -228,62 +234,92 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+		<!-- redis end-->
 
-		<!--	工具包	-->
+
+		<!--	集合工具包  start	-->
+		<!--commons-lang3 工具类  https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 			<version>3.2.1</version>
 		</dependency>
-		<!--工具包-->
+		<!--	集合工具包  end	-->
+
+
+		<!--	JSON工具包1  start	-->
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.49</version>
+			<version>${fastjson.version}</version>
 		</dependency>
+		<!--	JSON工具包1  end	-->
 
-		<!--工具包 -->
+		<!--工具包2 start-->
 		<dependency>
 			<groupId>com.xiaoleilu</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>3.1.0</version>
+			<version>${hutool.version}</version>
 		</dependency>
+		<!--工具包2  end-->
 
+		<!--	JSON工具包2  start	-->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.6.2</version>
-			<scope>compile</scope>
 		</dependency>
+		<!--	JSON工具包2  end	-->
+
+		<!--	google  开源 guava  start	-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>23.0</version>
 		</dependency>
-		<!-- logback 推送日志文件到logstash -->
-		<dependency>
-			<groupId>net.logstash.logback</groupId>
-			<artifactId>logstash-logback-encoder</artifactId>
-			<version>5.1</version>
-		</dependency>
+		<!--	google  开源 guava  end	-->
+
+
+		<!--	邮件开发  start	-->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.4.5</version>
+			<version>${javax.mail.version}</version>
 		</dependency>
-	<!-- 实现排列组合		-->
+		<!--	邮件开发  end	-->
+
+
+		<!--mapStruct依赖  start-->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-jdk8</artifactId>
+			<version>${org.mapstruct.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>${org.mapstruct.version}</version>
+		</dependency>
+		<!--mapStruct依赖  end-->
+
+
+		<!-- 实现排列组合		-->
 		<dependency>
 			<groupId>com.github.dpaukov</groupId>
 			<artifactId>combinatoricslib3</artifactId>
 			<version>3.3.0</version>
 		</dependency>
 
-		<!-- 阿里巴巴easyexcel -->
+		<!-- 阿里巴巴easyexcel start-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>easyexcel</artifactId>
-			<version>2.0.5</version>
+			<version>${easyexcel.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>cglib</groupId>
@@ -291,6 +327,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
@@ -299,41 +336,40 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.17</version>
+			<version>${poi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
+			<version>${poi.version}</version>
 		</dependency>
-
+		<!-- 阿里巴巴easyexcel end-->
 
 
 		<!--        jedis  Start-->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-			<version>2.9.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>1.3.1</version>
+			<version>${jedis.version}</version>
 		</dependency>
 		<!--        jedis  End-->
 
-
+		<!--	XML 操作类库	 start-->
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.8</version>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream.version}</version>
 		</dependency>
-		<!--	java内发送http请求	-->
+		<!--	XML 操作类库	 end-->
+
+
+
+		<!--	java内发送http请求	start-->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
-
+		<!--	java内发送http请求	end-->
 	</dependencies>
 
 
@@ -391,14 +427,67 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<!-- build标签描述了如何来编译及打包项目   参考地址：https://blog.csdn.net/u010010606/article/details/79727438	-->
 	<build>
+		<!--	而具体的编译和打包工作是通过build中配置的 plugin 来完成  	-->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<version>2.6</version>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
 			</plugin>
 		</plugins>
+		<!--	build过程中涉及的资源文件  用于包含 或 排除某些资源文件	-->
+		<resources>
+			<resource>
+				<!--	资源文件的路径，默认位于${basedir}/src/main/resources/目录下			-->
+				<directory>src/main/resources</directory>
+				<!--	构建过程中是否对资源进行过滤，默认false			-->
+				<filtering>true</filtering>
+				<!--	一组文件名的匹配模式，被匹配的资源文件将被构建过程忽略。同时被includes和excludes匹配的资源文件，将被忽略。			-->
+				<excludes>
+					<exclude>**/*.ttf</exclude>
+					<exclude>**/*.woff</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<!--	一组文件名的匹配模式，被匹配的资源文件将被构建过程处理			-->
+				<includes>
+					<include>**/*.ttf</include>
+					<include>**/*.woff</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
+
+
 
 	<repositories>
 		<repository>
@@ -411,5 +500,44 @@
 		</repository>
 	</repositories>
 
+
+
+	<!-- 多环境配置  start	-->
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<profileActive>local</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profileActive>dev</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<profileActive>uat</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<profileActive>test</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>online</id>
+			<properties>
+				<profileActive>online</profileActive>
+			</properties>
+		</profile>
+	</profiles>
+	<!-- 多环境配置  end	-->
 
 </project>

@@ -1,7 +1,6 @@
 package com.sxd.swapping.service;
 
 import com.sxd.swapping.jpa.pojo.GoodsStock;
-
 import java.util.Map;
 
 public interface GoodsStockService {

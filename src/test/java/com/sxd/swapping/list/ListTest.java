@@ -1,37 +1,33 @@
 package com.sxd.swapping.list;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.collect.Lists;
-import com.sxd.swapping.Bean.StuA;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Sets;
 
+import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 
-/**
- * @Author: SXD
- * @Description:
- * @Date: create in 2019/10/12 13:34
- */
+
+
 public class ListTest {
 
     public static void main(String[] args) throws Exception {
 
-        String a = "{\"pageInfoConfig\":{\"baseInfoModule\":{\"proCode\":false},\"ruleInfoModule\":{\"thridPlatform\":[2,3]},\"goodsInfoModule\":{\"skuType\":[]}},\"businessConfig\":{\"reconfirm\":true,\"autoAudit\":false,\"actType\":[1]}}";
-        JSONObject jsonObject = JSONObject.parseObject(a);
+        Set<String> set1 = new HashSet<>();
+        set1.add("1");
+        set1.add("2");
 
 
-        System.out.println(jsonObject);
+        Set<String> set2 = new HashSet<>();
+        set2.add("2");
+        set2.add("1");
+
+
+        Sets.SetView<String> difference = Sets.symmetricDifference(set1, set2);
+        System.out.println(difference.size());
+        System.out.println("不存在什么"+ Joiner.on(",").join(difference));
+
 
     }
-
-
-
-
-
 
 }

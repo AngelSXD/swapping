@@ -3,12 +3,12 @@ package com.sxd.swapping.controller;
 import com.sxd.swapping.mybatis.vo.UniVerResponse;
 import com.sxd.swapping.jpa.pojo.GoodsStock;
 import com.sxd.swapping.service.GoodsStockService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
@@ -18,8 +18,8 @@ import java.util.concurrent.CountDownLatch;
 public class GoodsStockController {
 
 
-    @Autowired
-    GoodsStockService service;
+    @Resource
+    private GoodsStockService goodsStockService;
 
     /**
      * 保存 商品库存信息
@@ -35,7 +35,7 @@ public class GoodsStockController {
         goodsStock.setSaleNum(0L);
         goodsStock.setVersion(0);
 
-        GoodsStock save = service.save(goodsStock);
+        GoodsStock save = goodsStockService.save(goodsStock);
         if (save!= null){
             res.beTrue(save);
         }else {
@@ -58,7 +58,7 @@ public class GoodsStockController {
 
         String uid = entity.getUid();
 
-        GoodsStock old = service.findByUid(uid);
+        GoodsStock old = goodsStockService.findByUid(uid);
         if (old != null){
             //设置一个线程安全的Map记录各个线程是否成功执行
             Map<Integer,String> map = new ConcurrentHashMap<Integer, String>();
@@ -103,7 +103,7 @@ public class GoodsStockController {
                     System.out.println("线程"+threadNum+":--------------------->开始工作");
                     begin.await();
 
-                    service.updateStock(map,entity,threadNum);
+                    goodsStockService.updateStock(map,entity,threadNum);
 
                     end.countDown();
                     System.out.println("线程"+threadNum+":--------------------->结束工作");

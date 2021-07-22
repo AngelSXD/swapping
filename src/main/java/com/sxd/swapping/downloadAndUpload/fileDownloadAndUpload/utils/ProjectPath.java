@@ -1,4 +1,4 @@
-package com.sxd.swapping.utils;
+package com.sxd.swapping.downloadAndUpload.fileDownloadAndUpload.utils;
 
 import com.xiaoleilu.hutool.io.FileUtil;
 import org.apache.commons.lang3.StringUtils;

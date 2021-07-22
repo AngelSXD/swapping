@@ -5,9 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -25,6 +23,8 @@ public class TimeUtils {
      * 格式1
      */
     final static public String PATTERN_1 = "yyyy-MM-dd HH:mm:ss.SSS";
+
+    final static public String PATTERN_2 = "yyyy-MM-dd";
     /**
      * 当前一天
      * 前一个月的时间
@@ -37,6 +37,15 @@ public class TimeUtils {
         System.out.println(date);
     }
 
+    @Test
+    public void between(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN_2);
+        LocalDate parse = LocalDate.parse("20210511", formatter);
+
+        LocalDate now = LocalDate.now();
+        Period between = Period.between(now, parse);
+        System.out.println(between.getDays());
+    }
 
 
     public static Date getModifyTime(String modifyTimeStr, String pattern){

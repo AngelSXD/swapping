@@ -1,8 +1,8 @@
-package com.sxd.swapping.controller;
+package com.sxd.swapping.downloadAndUpload.fileDownloadAndUpload.controller;
 
 
 import com.sxd.swapping.mybatis.vo.UniVerResponse;
-import com.sxd.swapping.utils.ProjectPath;
+import com.sxd.swapping.downloadAndUpload.fileDownloadAndUpload.utils.ProjectPath;
 import com.xiaoleilu.hutool.io.FileUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

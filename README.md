@@ -27,4 +27,8 @@
 
 13.[【spring boot】捕获全局异常@RestControllerAdvice](https://www.cnblogs.com/sxdcgaq8080/p/14628303.html)
 
-14.留作待续
+14.[【easyexcel】1.实时下载导出报表](https://www.cnblogs.com/sxdcgaq8080/p/14823458.html)
+
+15.[【java】mapstruct Spring支持的克隆转化](https://www.cnblogs.com/sxdcgaq8080/p/15043343.html)
+
+16.留作待续
