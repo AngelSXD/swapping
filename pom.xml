@@ -501,43 +501,4 @@
 	</repositories>
 
 
-
-	<!-- 多环境配置  start	-->
-	<profiles>
-		<profile>
-			<id>local</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<profileActive>local</profileActive>
-			</properties>
-		</profile>
-		<profile>
-			<id>dev</id>
-			<properties>
-				<profileActive>dev</profileActive>
-			</properties>
-		</profile>
-		<profile>
-			<id>uat</id>
-			<properties>
-				<profileActive>uat</profileActive>
-			</properties>
-		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
-				<profileActive>test</profileActive>
-			</properties>
-		</profile>
-		<profile>
-			<id>online</id>
-			<properties>
-				<profileActive>online</profileActive>
-			</properties>
-		</profile>
-	</profiles>
-	<!-- 多环境配置  end	-->
-
 </project>
