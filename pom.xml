@@ -467,22 +467,40 @@
 			<resource>
 				<!--	资源文件的路径，默认位于${basedir}/src/main/resources/目录下			-->
 				<directory>src/main/resources</directory>
-				<!--	构建过程中是否对资源进行过滤，默认false			-->
+				<!--
+					官网说明地址：https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html
+					filtering作用即 设置为true代表打通pom.xml和 <directory>指定路径下的文件之间的通道。（该目录下一般都是配置文件yml或properties，也可以是txt等其他）
+					使得<directory>指定路径下的配置文件中以${}表达式定义的变量，可以从pom.xml文件中获取到对应标签变量去完成文本替换。
+					例如：
+					pom.xml文件中定义了标签<name>张三</name>
+					配置文件中定义 spring.myname=${name}
+					则maven编译完成后，配置文件中的 spring.myname=张三
+
+
+					或者替换<directory>指定路径下的配置文件中以@sxdProfileActive@表达式定义的变量
+					例如：
+					pom.xml文件中定义了
+					<profile>
+						<id>dev</id>
+						<properties>
+							<sxdProfileActive>dev</sxdProfileActive>
+						</properties>
+					</profile>
+
+					application.properties文件中定义的spring.profiles.active=@sxdProfileActive@
+					则maven编译完成后，配置文件中的spring.profiles.active=dev
+
+					所以，多环境profile切换配置文件情况下，该标签必须设置为true,否则会导致spring.profiles.active=@sxdProfileActive@不能完成值替换，
+					从而导致applocation-{profile}.properties匹配不到对应的profile的配置文件，从而默认加载application.properties主配置文件。
+					而主配置文件中毛配置都没有，最终导致 java代码中的@Bean/@Configuration 中用到配置文件中的配置才能完成初始化的动作 就会失败。
+
+				-->
 				<filtering>true</filtering>
 				<!--	一组文件名的匹配模式，被匹配的资源文件将被构建过程忽略。同时被includes和excludes匹配的资源文件，将被忽略。			-->
 				<excludes>
 					<exclude>**/*.ttf</exclude>
 					<exclude>**/*.woff</exclude>
 				</excludes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>false</filtering>
-				<!--	一组文件名的匹配模式，被匹配的资源文件将被构建过程处理			-->
-				<includes>
-					<include>**/*.ttf</include>
-					<include>**/*.woff</include>
-				</includes>
 			</resource>
 		</resources>
 	</build>
@@ -500,5 +518,55 @@
 		</repository>
 	</repositories>
 
+
+	<!-- 多环境配置  start	-->
+	<profiles>
+		<!--	local一般作为开发者开发的环境	-->
+		<profile>
+			<id>sxdlocal</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sxdProfileActive>local</sxdProfileActive>
+			</properties>
+		</profile>
+		<!--	dev一般作为开发者稳定的自测环境	-->
+		<profile>
+			<id>dev</id>
+			<properties>
+				<sxdProfileActive>dev</sxdProfileActive>
+			</properties>
+		</profile>
+		<!--	uat环境一般作为业务验收环境	-->
+		<profile>
+			<id>uat</id>
+			<properties>
+				<sxdProfileActive>uat</sxdProfileActive>
+			</properties>
+		</profile>
+		<!--	test环境作为测试环境	-->
+		<profile>
+			<id>test</id>
+			<properties>
+				<sxdProfileActive>test</sxdProfileActive>
+			</properties>
+		</profile>
+		<!--	online环境作为生产环境	-->
+		<profile>
+			<id>online</id>
+			<properties>
+				<sxdProfileActive>online</sxdProfileActive>
+			</properties>
+		</profile>
+		<!--	backUp作为 2021.07.23分环境之前的一个备份稳定配置	-->
+		<profile>
+			<id>myBackUp</id>
+			<properties>
+				<sxdProfileActive>backup</sxdProfileActive>
+			</properties>
+		</profile>
+	</profiles>
+	<!-- 多环境配置  end	-->
 
 </project>
