@@ -5,6 +5,7 @@ package com.sxd.swapping.string;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.sxd.swapping.utils.arithmetic.BubbleSortUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.MessageFormat;
@@ -25,14 +26,15 @@ public class StringTest {
 
 
     public static void main(String[] args) {
-        List<String> a = new ArrayList<>();
-        Set<String> b = new HashSet<>();
-        b.add("1");
-        b.add("2");
+        int [] arr = new int[3];
+        arr[0] = 2;
+        arr[1] = 1;
+        arr[2] = 3;
 
-        b.removeAll(a);
+        System.out.println(JSON.toJSONString(arr));
+        BubbleSortUtil.bubbleSortArr(arr, false);
 
-        System.out.println(b);
+        System.out.println(JSON.toJSONString(arr));
 
 
     }
