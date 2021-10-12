@@ -19,7 +19,7 @@ public class BubbleSortUtil {
 
         for (int i = 0; i < arrLength; i++) {//外层至少循环n-1次
             boolean flag = false;
-            for (int j = 0; j < arrLength-i-1; j++) {//内层每个相邻的数据做对比
+            for (int j = 0; j < arrLength-i-1; j++) {//内层每个相邻的数据做对比  已经冒过泡的则无需再比较，因此内层循环次数为arrLength-i-1
                 if (desc ? arr[j] < arr[j+1] : arr[j] > arr[j+1]) {
                     int temp = arr[j+1];
                     arr[j+1] = arr[j];
