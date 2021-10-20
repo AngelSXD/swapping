@@ -1,7 +1,9 @@
 package com.sxd.swapping.globalException.advice;
 
+import com.sxd.swapping.globalException.customException.ValidateArgumentException;
 import com.sxd.swapping.globalException.result.GlobalResult;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,6 +37,17 @@ public class GlobalAdvice {
             allErrors.stream().forEach(i -> detailMsg.append(i.getDefaultMessage()).append(";"));
         }
         return GlobalResult.build(GlobalResult.ERROR_CODE, detailMsg.toString());
+    }
+
+    /**
+     * 自定义参数校验异常
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public GlobalResult handleStoreAuthException(ValidateArgumentException e) {
+        return GlobalResult.build(GlobalResult.ERROR_CODE, e.getMsg());
     }
 
 

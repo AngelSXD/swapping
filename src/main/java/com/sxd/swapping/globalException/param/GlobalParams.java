@@ -20,6 +20,8 @@ public class GlobalParams {
     @NotEmpty(message = "集合不能为空")
     private List<String>  myStrList;
 
+    private Long num1;
 
+    private Long num2;
 
 }

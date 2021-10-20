@@ -3,18 +3,7 @@ package com.sxd.swapping.string;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.sxd.swapping.utils.arithmetic.BubbleSortUtil;
-import org.apache.commons.lang3.StringUtils;
-
-import java.text.MessageFormat;
-import java.time.DateTimeException;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.*;
+import com.sxd.swapping.utils.arithmetic.SortUtil;
 
 /**
  * @Author: SXD
@@ -26,13 +15,15 @@ public class StringTest {
 
 
     public static void main(String[] args) {
-        int [] arr = new int[3];
-        arr[0] = 2;
+        int [] arr = new int[5];
+        arr[0] = 5;
         arr[1] = 1;
         arr[2] = 3;
+        arr[3] = 0;
+        arr[4] = 8;
 
         System.out.println(JSON.toJSONString(arr));
-        BubbleSortUtil.bubbleSortArr(arr, false);
+        SortUtil.mergeSortArr(arr, 5);
 
         System.out.println(JSON.toJSONString(arr));
 
