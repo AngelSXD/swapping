@@ -24,4 +24,9 @@ public class GlobalParams {
 
     private Long num2;
 
+    @NotNull(message = "分页查询时当前页不能为空")
+    private Integer currentPage;
+
+    @NotNull(message = "分页查询时页码不能为空")
+    private Integer pageSize;
 }
