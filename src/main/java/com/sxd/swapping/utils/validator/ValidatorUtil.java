@@ -79,9 +79,9 @@ public class ValidatorUtil {
         }
     }
 
-    //满足就报错
-    public static void is(Boolean flag,  String message) {
-        if (flag) {
+    //条件必须为true，否则就异常
+    public static void isTrue(Boolean condition,  String message) {
+        if (!condition) {
             throw new ValidateArgumentException(message);
         }
     }

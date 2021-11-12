@@ -45,7 +45,7 @@ public class GlobalAdvice {
      * @param e
      * @return
      */
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(ValidateArgumentException.class)
     public GlobalResult handleStoreAuthException(ValidateArgumentException e) {
         return GlobalResult.build(GlobalResult.ERROR_CODE, e.getMsg());
     }
